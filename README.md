@@ -1,11 +1,11 @@
 # BBM: Bridge-Baby-Monitor
 
-<img src="https://i.ibb.co/kSJFx1j/bbm.png">
+<img src="https://i.ibb.co/zJTPRqk/bbm.png">
 
 Intelligent solution for structural monitoring based on the analysis of natural frequencies in bridges.
 
 (INSERTAR BUENA IMAGEN DEL DISPOSITIVO)
-<img src="https://i.ibb.co/kSJFx1j/bbm.png" width="801">
+<img src="https://i.ibb.co/zJTPRqk/bbm.png" width="801">
 
 # Table of contents
 * [Introduction](#introduction)
