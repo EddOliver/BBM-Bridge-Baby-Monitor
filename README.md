@@ -5,7 +5,7 @@
 Intelligent solution for structural monitoring based on the analysis of natural frequencies in bridges.
 
 (INSERTAR BUENA IMAGEN DEL DISPOSITIVO)
-<img src="https://i.ibb.co/zJTPRqk/bbm.png" width="801">
+<img src="https://i.ibb.co/zJTPRqk/bbm.png">
 
 # Table of contents
 * [Introduction](#introduction)
@@ -32,7 +32,7 @@ The main problems by which a bridge can fail and fall are:
 Do not believe me ?, look what happened to the pedestrian bridges of my university.
 
 Video: Click on the image
-[![TERREMOTO 7.1 | 19 DE SEPTIEMBRE 2017 | CDMX TEC DE MONTERREY](https://image.freepik.com/free-icon/bad-face_318-60192.jpg)](https://www.youtube.com/watch?v=47jqaRRaQAM)
+[![TERREMOTO 7.1 | 19 DE SEPTIEMBRE 2017 | CDMX TEC DE MONTERREY](https://image.flaticon.com/icons/png/128/44/44431.png)](https://www.youtube.com/watch?v=47jqaRRaQAM)
 
 If we could notice a failure in the structure beforehand this would cut costs of maintenance and also prevent any disaster, therefore it is the main problem we want to fight with our solution.
 
