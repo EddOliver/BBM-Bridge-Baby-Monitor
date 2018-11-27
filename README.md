@@ -32,6 +32,7 @@ The main problems by which a bridge can fail and fall are:
 Do not believe me ?, look what happened to the pedestrian bridges of my university.
 
 Video: Click on the image
+
 [![TERREMOTO 7.1 | 19 DE SEPTIEMBRE 2017 | CDMX TEC DE MONTERREY](https://image.flaticon.com/icons/png/128/44/44431.png)](https://www.youtube.com/watch?v=47jqaRRaQAM)
 
 If we could notice a failure in the structure beforehand this would cut costs of maintenance and also prevent any disaster, therefore it is the main problem we want to fight with our solution.
