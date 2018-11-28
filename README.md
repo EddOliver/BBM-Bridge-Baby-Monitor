@@ -65,9 +65,12 @@ If only there was a way to monitor the field through a network of sustainable se
 
 ## Our Solution:
 
-Our solution to the problem was to create a sustainable platform of sensing and irrigation automation with predictive analysis via cloud. With one objective in mind: SAVE WATER.
+The solution would be to place a pair of vibration sensors strategically in the bridge to perform a continuous monitoring of the data and through AI and Machine Learning generate predictive models for the wear of the bridge, and preventive maintenance schedules for them.
 
-<img src="https://image.ibb.co/dvuWR8/68747470733a2f2f696d6167652e6962622e636f2f6b41706434542f45737175656d617469636f2e706e67.png" width="800">
+
+
+
+<img src="https://i.ibb.co/Xyj5dm0/Esquema-Semi.png" width="800">
 
 1.- Using temperature with humidity, soil moisture and soil temperature sensors, we used a Pycom FiPy dev board with Sigfox technology to obtain sensor data every 6 min. Sigfox chosen because the characteristics of long range and low power are excellent for remote areas.
 
