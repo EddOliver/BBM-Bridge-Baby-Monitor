@@ -22,7 +22,7 @@ bytesize=serial.EIGHTBITS,\
 timeout=0)
 client = mqttClient.Client(client_id='Raspberry', clean_session=False)
 client.on_connect = on_connect
-client.connect(host='172.20.10.3', port=1883)
+client.connect(host='ULTRA96IP', port=1883)
 client.loop_start()
 client.publish("Data","RPi Connected")
 try:
