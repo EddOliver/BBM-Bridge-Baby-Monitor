@@ -499,11 +499,11 @@ Video of the working prototype.
 
 - We selected the Ultra96 in the selection of boards.
 
-<img src="https://i.ibb.co/hf1PVQr/12.png">
+<img src="https://i.ibb.co/TRWm0P1/13.png">
 
 - Already in the project we select the option "Create Block Diagram".
 
-<img src="https://i.ibb.co/TRWm0P1/13.png">https://i.ibb.co/FKMTKBt/15.png
+<img src="https://i.ibb.co/pLFGTWB/14.png">
 
 - We press the Add IP button.
 
