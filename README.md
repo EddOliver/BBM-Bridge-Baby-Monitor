@@ -24,6 +24,23 @@ Intelligent solution for structural monitoring based on the analysis of natural 
 
 ## Introduction:
 
+DOKI INTRODUCTION
+
+
+
+
+
+
+Do not believe me yet?, look what happened to the pedestrian bridges of my university.
+
+Video: Click on the image
+
+[![TERREMOTO 7.1 | 19 DE SEPTIEMBRE 2017 | CDMX TEC DE MONTERREY](https://image.flaticon.com/icons/png/128/44/44431.png)](https://www.youtube.com/watch?v=47jqaRRaQAM)
+
+## Problematic:
+
+<img src="https://bridgemastersinc.com/wp-content/uploads/2016/06/I-35W-Mississippi-River-Bridge-collapse.jpg" width="800">
+
 The little monitoring that bridges have in the world and the structural damage that they can have over time and as the lack of preventive maintenance can cause a partial or total failure of the bridge.
 
 The main problems by which a bridge can fail and fall are:
@@ -36,39 +53,7 @@ The main problems by which a bridge can fail and fall are:
 - Unexpected events
 - A combination of issues.
 
-Do not believe me ?, look what happened to the pedestrian bridges of my university.
-
-Video: Click on the image
-
-[![TERREMOTO 7.1 | 19 DE SEPTIEMBRE 2017 | CDMX TEC DE MONTERREY](https://image.flaticon.com/icons/png/128/44/44431.png)](https://www.youtube.com/watch?v=47jqaRRaQAM)
-
 If we could notice a failure in the structure beforehand this would cut costs of maintenance and also prevent any disaster, therefore it is the main problem we want to fight with our solution.
-
-## Problematic:
-
-<img src="https://image.ibb.co/nc9HYo/farmer_7591.jpg" width="800">
-
-Let's take a look at some FACTS:
-
-• The population in Mexico (Both of the author's own country) and in the world will grow.
-
-• By 2050 the production of food will have to DOUBLE to feed this population.
-
-• The amount of arable Land will not increase.
-
-• The amount of Water available will be decreasing.
-
-• Sustainable Disruption is needed.
-
-• Current methods are insufficient for this.
-
-• Infrastructure is costly.
-
-• Most fields are in remote areas.
-
-• Urban agriculture needs a cheap and readily available solution, for it to be sustainable.
-
-If only there was a way to monitor the field through a network of sustainable sensors, which could be monitored in real time 365 days a year, performing data analytics in the cloud and taking weather predictions to generate models. Taking all this information to manage resources such as water, in order to save most of them, and above all being powered by solar panels ....... oh wait, there is Aggrofox!
 
 ## Our Solution:
 
@@ -620,26 +605,15 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
 <img src="https://i.ibb.co/HtLYmg0/estadistica.png">
 
-# Future Rollout
+## Future Rollout
 
-• Adding a water fluxometer to know exactly how much water we use.
+DOKI
 
-• Custom PCB for all the hardware components.
-
-• Maybe migrate to the SiPy version of the Pycom Board.
-
-• Get the data to a SQL database for long term predictive ML models.
-
-• Expand to the use of several other clouds such as AWS and Google cloud which we already dominate.
-
-• Replace the Particle Photon with Sigfox for the actuators so it uses only one communication platform.
-
-
-# References:
+## References:
 
 All the information about the technology used and direct references are in our wiki:
 
-Wiki: https://github.com/EddOliver/AggroFox/wiki
+Wiki: https://github.com/EddOliver/BBM-Bridge-Baby-Monitor/wiki
 
 Top
 
