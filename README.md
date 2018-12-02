@@ -101,8 +101,8 @@ There are already universities in the world that make this type of census of bri
 1.1. Download the operating system that the Ultra96 will use
 The operating system that comes by default in the SD card that comes with the Ultra96 is a system based on PetaLinux, which to start carrying out this project caused many problems due to not being able to install packages using the "apt-get" command. which was essential for the correct installation of some packages that we will use later, therefore it was decided to change to the other operating system that Xilinx offers from its official sources.
 
-    - Link: http://avnet.me/ultra96_pynq_sd_image
-    - Link: Documents in the Wiki: D.
+- Link: http://avnet.me/ultra96_pynq_sd_image
+- Link: Documents in the Wiki: D.
 
 1.2. Flash the operating system on an SD card.
 To Flash the operating system in the SD, I recommend a minimum size for the SD of 16 GB.
