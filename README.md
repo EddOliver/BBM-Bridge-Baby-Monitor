@@ -141,13 +141,13 @@ Video: Click on the image
     - \\ 192.168.3.1 \ xilinx (for Windows, tested on Windows 10).
     - smb: //192.168.3.1/xilinx (for Linux, tested on Ubuntu 18.04)
     - On the Mac, it is not possible to connect correctly due to the USB Ethernet PCI connection protocol. I recommend that you use another operating system to be able to configure the board (maybe you can use a virtual machine with linux)
+
 1.8. Download and save the necessary files on the board.
 Download the files from the github repository.
 
 - Link: https://github.com/EddOliver/BBM-Bridge-Baby-Monitor/
 - Copy and paste the folder called "Hackster" in the path "/xilinx/jupyter_notebooks".
 - Copy and paste the contents of the "FPGA" folder in the following path "/xilinx/pynq/overlays".
-
 
 1.9. Now we will make the configuration of the Ultra96 installing the corresponding packages so that our code runs without problems.
 
@@ -254,7 +254,7 @@ Host: RASPBERRYIP              Username:pi           Password:raspberry         
 - This program will let us access the command console of the raspberry.
 - In Linux, just open the terminal and put the following command.
 
-- “ssh pi@RASPBERRYIP”
+        ssh pi@RASPBERRYIP
 
 <img src="https://i.ibb.co/PxP86Xz/terminal.png">
 
@@ -272,7 +272,7 @@ Host: RASPBERRYIP              Username:pi           Password:raspberry         
 
 3.9.- Once the console is open, we will edit the file that we passed in the previous paragraph to configure the IP of the Ultra96.
 
-In the terminal of the raspberry we will write the following command.
+- In the terminal of the raspberry we will write the following command.
      
     sudo nano exe.py
 
@@ -473,171 +473,142 @@ Video of the working prototype.
 
 <img src="https://i.ibb.co/B6BF4pS/9.png">
 
+8.2.- Development of overlay with blocks in Vivado Design Suite - HLx Editions.
 
+- First when opening the program we will have to create a new project.
 
+<img src="https://i.ibb.co/f8gWx42/10.png">
 
+- We create the name of the project with "ANY_NAME"
 
+<img src="https://i.ibb.co/XDXbTsn/11.png">
 
+- In this option we put "do not specify sources at this time"
 
+<img src="https://i.ibb.co/hf1PVQr/12.png">
 
+- We selected the Ultra96 in the selection of boards.
 
+<img src="https://i.ibb.co/hf1PVQr/12.png">
 
+- Already in the project we select the option "Create Block Diagram".
 
+<img src="https://i.ibb.co/TRWm0P1/13.png">https://i.ibb.co/FKMTKBt/15.png
 
+- We press the Add IP button.
 
+<img src="https://i.ibb.co/FKMTKBt/15.png">
 
+- In the search menu we type "Ultra" and select the option of the image to add the FPGA that has the Ultra96.
 
+<img src="https://i.ibb.co/DQthvMf/16.png">
 
+- It will open a module like this.
 
+<img src="https://i.ibb.co/V9M1PkK/17.png">
 
+- In the part above we press this button so that the block is configured.
 
+<img src="https://i.ibb.co/sRhnFwj/18.png">
 
+- We add a DMA module.
 
+<img src="https://i.ibb.co/cyPZzzY/19.png">
 
+- We double-click on the module and remove the "Enable Scatter Gather Engine" option.
 
+<img src="https://i.ibb.co/s3f8YwP/21.png">
 
+- We go to Tools - Settings - IP - Respository.
 
+<img src="https://i.ibb.co/6HYwYjv/23.png">
 
+- In the IP Repositories option, we click on Add.
 
+<img src="https://i.ibb.co/r6fCCfh/24.png">
 
+- We select the folder where we store our module.
 
+<img src="https://i.ibb.co/w46JWFg/25.png">
 
+- Select your module and add it to your design.
 
+<img src="https://i.ibb.co/PmvgG84/26.png">
 
+- Since we have both DMA modules and your module we connect them as follows.
 
+<img src="https://i.ibb.co/mGCGZtd/29.png">
 
+- We double click on the Ultra module where you will see this menu.
 
+<img src="https://i.ibb.co/V3BFs7s/30.png">
 
+- We leave the PS-LS Configuration section and add the following port.
 
+<img src="https://i.ibb.co/rfppp5H/31.png">
 
+- Once we have finished our designs, we press the next button to automatically connect everything, this process we will do as many times as this button appears so that the connections are finished.
 
+<img src="https://i.ibb.co/k6Z8hk8/32.png">
 
+- Once it is finished, we will have a module similar to this one.
 
+<img src="https://i.ibb.co/yqLSx8p/33.png">
 
+- To make reference in the python code we will have to change the name of the DMA module in the Block Properties menu as seen in the image.
 
+<img src="https://i.ibb.co/zmnRg9J/34.png">
 
+- Once this is over we go to the Sources tab and in our block we give "Create HDL Wrapper", remember well where you save it because it will be an important file for our project, also give it a simple name like "model.tcl".
 
+<img src="https://i.ibb.co/grnYc4M/35.png">
 
+Once the process is finished, we will press the "Generate Bitstream" button.
 
+<img src="https://i.ibb.co/LdR8v7V/36.png">
 
+- The file was created in the path where the project ~ / vivado / ANY_NAME / ANY_NAME.runs / impl_1 / design_1_wrapper.bit was saved
 
+- That file you copy and paste it into the folder where you saved the tcl and you will also give them both the same name.
 
+- Once this is done we will paste both files in the Overlays folder of the Ultra96 as we did in subsection 1.8.
 
+8.3.- How to call our FPGA module in Python.
 
+- Copy this code to a jupyter notebook for the module to work.
 
+        from pynq import Overlay
+        from pynq import DefaultIP
+        import pynq.lib.dma
+        from pynq import Xlnk
 
+        xlnk = Xlnk()
 
+        # Change this path with the path of your bitstream.
 
+        overlay = Overlay('/home/xilinx/pynq/overlays/model.bit')
 
+        # Write the name of your module as shown in the tutorial.
 
+        dma = overlay.MY_DMA
 
+        # Here you have to put the length of the arrangement that you will send to the module.
 
+        in_buffer = xlnk.cma_array(shape=(YOUR_ARRAY_SIZE,), dtype=np.float32)
+        out_buffer = xlnk.cma_array(shape=(YOUR_ARRAY_SIZE,), dtype=np.float32)
 
+        # Copy your array data in in_buffer before run this part
 
+        dma.sendchannel.transfer(in_buffer)
+        dma.recvchannel.transfer(out_buffer)
+        dma.sendchannel.wait()
+        dma.recvchannel.wait()
 
-1.- Using temperature with humidity, soil moisture and soil temperature sensors, we used a Pycom FiPy dev board with Sigfox technology to obtain sensor data every 6 min. Sigfox chosen because the characteristics of long range and low power are excellent for remote areas.
+        # After this, the data was in your out_buffer
 
-- Each batch of sensing is done at this frequency to send 120 data per day and not pass the data quota of Sigfox which is 140 data packets per day.
+8.4. Aquí mostramos algunos resultados donde demostramos que usar diseños de FPGA es una ventaja.
 
-- For this system it was decided to use an Arduino board to obtain the data from the sensors (using the vast array of libraries from Arduino) and send them through Serial at 9600 baud rate to the Pycom FiPy board.
-
-- Once on the Pycom board we receive the data from the sensors and through Sigfox we send them to the Sigfox Backend platform.
-
-<img src="https://image.ibb.co/bGNtpT/chacala3.png">
-
-On the image above you can see at: A)The main sensor circuit, with the Pycom FiPy with Sigfox and the sensors connected, also the solar power management. B) The irrigation system circuit that uses a Particle Photon and a Solenoid Valve. And C) an implementation of the system.
-
-<img src="https://image.ibb.co/h5drR8/Whats_App_Image_2018_07_29_at_01_22_33.jpg" width="600">
-
-This other image shows the finished Hardware product, with the irrigation system on the left and the sensor system with its solar panel on the right.
-
-2.- Once the data is in the Sigfox Backend, we send the data through a callback to the Thingspeak website through its API (more information in the link below).
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/Sigfox%20Configuration/Aggrofox%20Conf
-
-3.- Once we have the data at Thingspeak, through the Thingspeak API we send the data to IBM Bluemix.
-
-- On the Bluemix platform, we made it possible to develop almost any application with the obtained data. (All the applications are based on Node Red to make the prototyping easier).
-
-- Examples of these applications:
-
-    Generate databases of our crops and their conditions.
-
-    Do data analysis to obtain predictive models in the long term.
-
-    Water automation systems with the data obtained (as we do in this project).
-    
-    Crop yield analysis.
-
-3.1- We made a Dashboard with the data obtained for the complete and simple visualization of the data.
-
-<img src="https://image.ibb.co/hGifKT/68747470733a2f2f696d6167652e6962622e636f2f656a6e7934542f6e6f6465646173682e6a7067.jpg">
-
-In this image you can see the Node-RED flow and the Dashboard we made.
-
-<img src="https://image.ibb.co/k0baOo/EFDF60_E8_0_E94_4802_8_D96_2_DF7_F35331_FA.jpg">
-
-<img src="https://image.ibb.co/m7yKDo/Whats_App_Image_2018_07_29_at_01_22_13.jpg" width="300"> <img src="https://image.ibb.co/j3kczT/Whats_App_Image_2018_07_29_at_01_22_14.jpg" width="300">
-
-These other images above show the Web Desktop Dashboard and some screenshots of the mobile version.
-
-- For the application, we made a data crossing with the OpenWeatherMap API, to perform the control of an electrovalve connected to a Particle Photon microcontroller.
-
-- The crossing of data obtained is used to check if that day is going to rain and thus not use irrigation water in crops.
-
-- Also if the system detects that water is needed in the field by the humidity sensors, the irrigation system is turned on.
-
-- In turn once a day an email will be sent to the farmer with the general information of his field or he can check anytime on his dashboard.
-
-- Also everytime the irrigation system is online, a notification will be sent.
-
-# Here are some images of the solution implemented on various crops:
-
-<img src="https://image.ibb.co/dre1B8/Whats_App_Image_2018_07_29_at_21_23_06_1.jpg" width="300"> <img src="https://image.ibb.co/iS4CJo/Whats_App_Image_2018_07_29_at_21_23_09_1.jpg" width="300"> <img src="https://image.ibb.co/gqfmdo/Whats_App_Image_2018_07_29_at_21_23_06.jpg" width="300">
-
-In the images you can see an Hydroponic Chili,an Onion Culture and the implementation on a Fig Tree
-
-# Here is a Video of AggroFox in action!, click on the image:
-
-[![AggroFox VIDEO!](https://image.ibb.co/n84O68/agrofox_Recuperado.png)](https://www.youtube.com/watch?v=7SUabreZY28& "AggroFox")
-
-
-## Where should I start:
-
-1.-Do the first configuration for your board.
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/Sigfox%20Configuration/First%20Configuration
-
-2.- Enter the following folder: AggroFox Configuration, and complete all the steps to perform the corresponding configuration.
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/Sigfox%20Configuration/Aggrofox%20Conf
-
-3.- Do the Arduino configuration.
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/Arduino%20Code
-
-4.- Do the Pycom configuration.
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/Pycom%20Code
-
-5.- Make the circuits:
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/Circuit
-
-6.- Link it to IBM IoT Cloud for amazing dashboards, data storage and access to other cloud services.
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/IBM%20cloud%20AggroFox
-
-7.- Automation of irrigation via IBM cloud with weather forecast.
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/Irrigation%20System
-
-8.- Going Green (Add a Solar panel to your sensor module).
-
-Link: https://github.com/EddOliver/AggroFox/tree/master/Solar%20Power
-
-Enjoy!!
-
+<img src="https://i.ibb.co/HtLYmg0/estadistica.png">
 
 # Future Rollout
 
