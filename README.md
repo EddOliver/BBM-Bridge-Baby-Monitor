@@ -4,7 +4,6 @@
 
 Intelligent solution for structural monitoring based on the analysis of natural frequencies in bridges.
 
-(INSERTAR BUENA IMAGEN DEL DISPOSITIVO)
 <img src="https://i.ibb.co/y0FNfCq/Fisicoa.jpg">
 
 # Table of contents
