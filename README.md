@@ -18,7 +18,6 @@ Intelligent solution for structural monitoring based on the analysis of natural 
 * [Tests](#tests)
 * [Results](#results)
 * [How to make your own FPGA developments in the Ultra96](#how-to-make-your-own-fpga-developments-in-the-ultra96)
-* [Where should I start?](#where-should-i-start)
 * [Future Rollout](#future-rollout)
 * [References](#references)
 
