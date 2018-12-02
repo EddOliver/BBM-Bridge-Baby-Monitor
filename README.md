@@ -357,6 +357,8 @@ A platform with an arduino system and a shield of motors was realized, which ser
 
 - Once we tested the test platform, we put the sensor on the platform so that we could get an answer.
 
+Video: Click on the image
+
 [![BBM Test Platform](https://cdn.iconscout.com/icon/premium/png-256-thumb/bridge-199-673478.png)](https://www.youtube.com/watch?v=JY3IQGm-b5Y)
 
 - The results showed how the notification of the bridge when maintenance is required was sent correctly when the sensor measures an excessive amplitude over an X frequency.
