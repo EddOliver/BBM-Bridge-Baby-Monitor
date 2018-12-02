@@ -67,10 +67,131 @@ If only there was a way to monitor the field through a network of sustainable se
 
 The solution would be to place a pair of vibration sensors strategically in the bridge to perform a continuous monitoring of the data and through AI and Machine Learning generate predictive models for the wear of the bridge, and preventive maintenance schedules for them.
 
+Bill of materials.
+
+- Board Ultra96.
+- SD card, 16 GB, Class 10 (Ultra96).
+- Power Source, 5v 2.5 A, Jack, (Ultra96)
+- Arduino 101 (Arduino Curie).
+- Raspberry Pi Zero W.
+- SD card, 16 GB, Class 10 (Raspberry Pi Zero W).
+- Power Source, 5v 2.5 A, micro-USB (Raspberry Pi Zero W).
+- Micro-USB to USB OTG adapter.
+- Micro-USB cable (Raspberry Pi Cable).
+- USB Type A Male to USB Type B Male (Arduino Cable).
+- Power Bank 5v.
+
+Optional:
+- Arduino UNO.
+- USB Type A Male to USB Type B Male (Arduino Cable).
+- Arduino Motor Shield.
+- 2x Angle Servo.
+- Power Bank 5v (Another).
+
+Code Flowchart.
+
+<img src="https://i.ibb.co/b78TxQr/Blank-Diagram-1.png">
+
+There are already universities in the world that make this type of census of bridges using strain gauges as they do in http://livinglabs.curtin.edu.au/#/, this shows us that the part of bridges sensing and obtaining the data is indispensable.
+
+# Ultra96 Setup.
+
+1. For this solution the most important part will be the use of the Ultra96 which is the last board of Xilinx for the contest Create Intelligence at the Edge of the Hackster page, in this project we will take advantage of the board in addition to have a linux operating system, we can perform acceleration of software processes by creating hardware modules on an FPGA.
+
+1.1. Download the operating system that the Ultra96 will use
+The operating system that comes by default in the SD card that comes with the Ultra96 is a system based on PetaLinux, which to start carrying out this project caused many problems due to not being able to install packages using the "apt-get" command. which was essential for the correct installation of some packages that we will use later, therefore it was decided to change to the other operating system that Xilinx offers from its official sources.
+
+    - Link: http://avnet.me/ultra96_pynq_sd_image
+    - Link: Documents in the Wiki: D.
+
+1.2. Flash the operating system on an SD card.
+To Flash the operating system in the SD, I recommend a minimum size for the SD of 16 GB.
+I recommend using the following software which works in any operating system, but you can use the program that you like the most.
+
+    - Link: https://www.balena.io/etcher/
+    - Remember that before Flash the operating system you have to format the SD.
+
+1.3. Once the operating system is flashed, place the SD card in the correct slot of the Ultra96, connect a microUSB cable to the laptop, the power cable and press the power button as shown in the following diagram.
+
+    - Remember that the minimum power the card can have is 12 Volts at 2 A.
+
+<img src="https://i.ibb.co/QXBvKQV/Ultra-Conections.png">
+
+1.4. If the Flashing of the operating system and the power supply is correct, the board will turn on as follows.
+
+
+Video: Click on the image
+
+[![Ultra96 Correct Boot](https://ultra96-pynq.readthedocs.io/en/latest/_images/ultra96.png)](https://www.youtube.com/watch?v=pf8QWeNk9lU)
+
+1.5. Once we have connected the card, we will notice that the connected memory will appear on our connected USB devices.
+
+    - The Ultra96 creates an Ethernet PCI connection and when we see that USB memory connected it means that we are ready to start working.
+
+<img src="https://i.ibb.co/k42JcTZ/USB.png">
+
+1.6. Enter the web interface.
+
+    - To access the web interface we will enter the following IP "192.168.3.1".
+    - The board will ask us for an access code, the key is "xilinx".
+Already in the interface you can see folders and a Jupyter Notebook, the board has by default installed Python 3 for Notebooks.
+
+1.7. Access the files on the card.
+
+    - To access the files on the card, through the smb connection according to the OS you will have to go to the file browser and put in the address bar.
+        - \\ 192.168.3.1 \ xilinx (for Windows, tested on Windows 10).
+        - smb: //192.168.3.1/xilinx (for Linux, tested on Ubuntu 18.04)
+        - On the Mac, it is not possible to connect correctly due to the USB Ethernet PCI connection protocol. I recommend that you use another operating system to be able to configure the board (maybe you can use a virtual machine with linux)
+1.8. Download and save the necessary files on the board.
+Download the files from the github repository.
+
+    - Link: https://github.com/EddOliver/BBM-Bridge-Baby-Monitor/
+    - Copy and paste the folder called "Hackster" in the path "/ xilinx / jupyter_notebooks".
+    - Copy and paste the contents of the "FPGA" folder in the following path "/ xilinx / pynq / overlays".
+
+
+1.9. Now we will make the configuration of the Ultra96 installing the corresponding packages so that our code runs without problems.
+
+    - For the initial configuration inside the "Hackster" folder you have to open the notebook called "First_Setup.ipynb".
+    - Once inside the Notebook, run the command in point 1.
+    - This command configures the WiFi network on the board, in order to download the packages.
+    - If it is connected correctly, the text "WiFi Ready" will be printed.
+    - When it finishes executing we will run the command of subsection 2 which downloads the necessary packages for the board to work.
+    - This process will take between 5 and 15 min depending on the speed of the internet.
+    - If all this process goes well, a sign that says "All the Packages was installed correctly" will be printed on the bottom of the console.
+
+When this process is finished, execute the command in part 3 to obtain the IP of the board. THIS PROCESS IS VERY IMPORTANT SINCE THE IP WILL BE USED LATER FOR THE COMMUNICATION OF THE RASPBERRY AND THE ARDUINO BY MQTT.
+
+1.10. Congratulations! We have made the corresponding configurations in the Ultra96 for now.
+
+# Accelerometer configuration in the Arduino Curie.
+
+2. For this project this sensor was used because it was the sensor that we had at hand, it is also more interesting to show the integration of an Arduino Curie also called Arduino 101 to a solution of this type.
+
+PD.It is also possible to use any other Accelerometer and connect it directly to the Raspberry Pi Zero W that we will configure later.
+
+2.1. Arduino curie configuration on the PC.
+    - For this step you have two options:
+        - Use the Arduino WebEditor with which you do not have to install anything, but you have to have an account in the arduino page to access, create it is free: 3
+        - Link: https://create.arduino.cc/
+
+    - If you prefer to use the editor in the Arduino IDE Desktop Editor, read the official Arduino 101 documentation for information on how to install the arduino curie according to your operating system.
+        - Link: https://www.arduino.cc/en/Guide/Arduino101
+
+
+2.2.  Program the Arduino Curie with the code provided.
+
+    - If you chose to use the WebEditor:
+    - The code link: https://create.arduino.cc/editor/Altaga/88928a34-3c20-4968-96a6-6413fe2f357b/preview
+    - If you chose to use the Desktop Editor:
+    - In the github folder called "AccelerometerCurie" you will find the .ino that you have to program in the Arduino Curie.
 
 
 
-<img src="https://i.ibb.co/Xyj5dm0/Esquema-Semi.png" width="800">
+
+
+
+
 
 1.- Using temperature with humidity, soil moisture and soil temperature sensors, we used a Pycom FiPy dev board with Sigfox technology to obtain sensor data every 6 min. Sigfox chosen because the characteristics of long range and low power are excellent for remote areas.
 
