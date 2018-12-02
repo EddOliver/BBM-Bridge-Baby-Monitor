@@ -209,7 +209,7 @@ When this process is finished, execute the command in part 3 to obtain the IP of
 
         country = us
         update_config = 1
-        ctrl_interface = / var / run / wpa_supplicant
+        ctrl_interface =/var/run/wpa_supplicant
 
         network =
         {
