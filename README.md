@@ -190,7 +190,7 @@ When this process is finished, execute the command in part 3 to obtain the IP of
 
 # 3. Configure the Raspberry Pi Zero:
 
-- For this point it is also possible to use instead of the Arduino Curie and the Raspberry Pi Zero, an ESP32 or an ESP8266 with an accelerometer, connecting it through MQTT.
+3. For this point it is also possible to use instead of the Arduino Curie and the Raspberry Pi Zero, an ESP32 or an ESP8266 with an accelerometer, connecting it through MQTT.
 
 3.1. Download the operating system of the Raspberry Pi Zero.
 
@@ -306,15 +306,206 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 # Connection diagrams of all the devices.
 
-Schematic:
+4.1. Schematic:
 
 <img src="https://i.ibb.co/QXBvKQV/Ultra-Conections.png" width="400"><img src="https://i.ibb.co/wYhBXRr/RPIEsquema.png" width="400">
 
-Real connections:
+4.2. Real connections:
 
 - The black box below the raspberry is a power bank of 5v - 10000mA.
 
 <img src="https://i.ibb.co/y0FNfCq/Fisicoa.jpg">
+
+# Time to perform the first test:
+
+5.1. Connect the Ultra96 to the network and activate Mosquitto.
+
+- For this first test we will connect the Ultra96 first as shown in the diagram of point 4. and we will turn it on.
+- We will access the web interface where the Jupyter Notebooks are.
+- We will enter the Hackster folder.
+- We opened the "Bridges.ipynb" and "Wifi_Mosquitto.ipynb" notebook.
+- We entered the "Wifi_Mosquitto.ipynb" notebook.
+- We put our data of SSID and PSW.
+- We give run to run the program to connect to our WiFi network and activate the Mosquitto broker.
+
+5.2. Connection to the Ultra96 broker.
+
+- Once it connects correctly, we enter the "Bridges.ipynb" notebook.
+- We execute the main code, if everything goes well we will notice as it says "Connected to broker" meaning that there is a correct connection.
+
+5.3. Connect the sensor module.
+
+- Connect your power supply to the raspberry and go!
+5.4. Check that the data reaches the board.
+
+- If the data is arriving correctly, according to the sampling specifications that we have programmed, we will receive these notifications that the frequencies are being saved in a CSV file.
+
+<img src="https://i.ibb.co/cyTPBrJ/Results.png">
+
+5.5. Once all the data samples have been made, the system will take the stored data and load them into the machine learning model so that it learns in each iteration and becomes more precise, this being a model of continuous learning.
+
+<img src="https://i.ibb.co/Q9nnM3N/results1.png">
+
+# Tests.
+
+6. Since the project was made, it was time to test it on a platform where we could recreate an oscillatory movement that the sensors could capture.
+
+6.1. Test platform with Arduino.
+
+A platform with an arduino system and a shield of motors was realized, which served to recreate a harmonic movement with the motors and in addition to make it portable it was decided to use a Power Bank.
+
+<img src="https://i.ibb.co/L8R6m8N/Platform.jpg">
+
+- Once we tested the test platform, we put the sensor on the platform so that we could get an answer.
+
+[![BBM Test Platform](https://cdn.iconscout.com/icon/premium/png-256-thumb/bridge-199-673478.png)](https://www.youtube.com/watch?v=JY3IQGm-b5Y)
+
+- The results showed how the notification of the bridge when maintenance is required was sent correctly when the sensor measures an excessive amplitude over an X frequency.
+
+6.2. Actual test on pedestrian bridge.
+
+- For the final test it was decided to take the system to a pedestrian bridge in our university (if the one of the video), where we have put the system to monitor 24 hours the advance of the pedestrians, all this asking for the corresponding permits in the university and we monitoring every so often to verify that the system works correctly.
+
+Video of the working prototype.
+
+# Results.
+
+
+# How to make your own FPGA developments in the Ultra96.
+
+8. For this part of the tutorial I will show you how to make your own custom modules for the FPGA in a simple way using the two softwares provided by Xilinx, which they are.
+
+- Vivado Design Suite - HLx Editions and Vivado High-Level Synthesis (Included in the Suite)
+- Direct Download: https://www.xilinx.com/member/forms/download/xef-vivado.html?filename=Xilinx_Vivado_SDK_2018.2_0614_1954.tar.gz
+
+8.1 Development of module with Vivado code High-Level Synthesis.
+
+- We enter Vivado High-Level Synthesis, where the following options menu will appear and where we will select "Create New Project"
+
+<img src="https://i.ibb.co/g9PYkm0/1.png">
+
+- In the "Project name" type the name you want.
+- In the route where it will be saved, I recommend it to be a personalized route where you know it is going to be saved (Note this route because it will serve later).
+
+<img src="https://i.ibb.co/QNMn5QH/1-1.png">
+
+- In "Top Function" write the name of the function, I recommend that it be a simple name and that you remember it for later.
+
+<img src="https://i.ibb.co/f1FCBkw/3.png">
+
+- We will go to the "New File" button and create a new file as shown in the image.
+
+<img src="https://i.ibb.co/RTr6QXB/4.png">
+
+- When we finish creating the file and add it, we will give it "Next" twice and a screen like the following one will appear, where we will select "Part Selection" to choose the part that has the Ultra96.
+
+<img src="https://i.ibb.co/FXpYrvB/5-5.png">
+
+- The part of the Ultra96 is an "xczu3eg-sbva484-1-e"
+
+<img src="https://i.ibb.co/fkNHkkT/5.png">
+
+- Once this process is finished we will go to the upper left of the project and open the tab that says "Source" and we will double click on our module to open it.
+
+<img src="https://i.ibb.co/S58QCgF/7.png">
+
+- Within our module we will write the following code.
+
+        // DONT MODIFY
+        #include "ap_axi_sdata.h"
+        #include "ap_int.h"
+
+        // DONT MODIFY
+        typedef ap_axiu<32,1,1,1> stream_type;
+
+
+        // MODIFY
+        float YOUR_OUTPUT=0;
+        float IN_NUMBER=0;
+
+        // DONT MODIFY
+        void YOUR_MODULE_NAME(stream_type* in_data, stream_type* out_data) {
+        #pragma HLS INTERFACE ap_ctrl_none port=return
+        #pragma HLS INTERFACE axis port=in_data
+        #pragma HLS INTERFACE axis port=out_data
+
+        // MODIFY
+        // Your code structure in c goes from here
+
+        //This variable is the entry of the data sent by the DMA number by number.
+        IN_NUMBER = in_data->data;
+
+        // This is my structure to always get the highest number that has entered at the exit.
+        if(YOUR_OUTPUT < IN_NUMBER)
+        {
+            YOUR_OUTPUT = IN_NUMBER;
+        }
+
+        /*
+        I will send to this structure a series
+        of data within an array and therefore
+        send me the maximum value found in the array.
+        */
+
+        // To here
+
+
+        // This is the declaration of the exit ports necessary to operate the DMA.
+
+        // DONT MODIFY
+        out_data->data = YOUR_OUTPUT;
+        out_data->dest = in_data->dest;
+        out_data->id = in_data->id;
+        out_data->keep = in_data->keep;
+        out_data->last = in_data->last;
+        out_data->strb = in_data->strb;
+        out_data->user = in_data->user;
+        }
+
+- The code is commented on what parts you should write and what not, this in order to create a code based on the data transfer by DMA, which is the fastest hardware way to move data and also be able to implement any structure in C that is required, which is very useful.
+
+- Once the writing of the code is finished, we will go to the top of the window to the synthesis button to compile the code.
+
+<img src="https://i.ibb.co/rZncmdM/8.png">
+
+- If everything went well the code will be compiled and it will allow us to create our RTL, which is the file that we will import to Vivado Design Suite - HLx Editions to put it in our design to blocks of the FPGA.
+
+<img src="https://i.ibb.co/B6BF4pS/9.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
