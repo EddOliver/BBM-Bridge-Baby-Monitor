@@ -146,8 +146,8 @@ Video: Click on the image
 Download the files from the github repository.
 
 - Link: https://github.com/EddOliver/BBM-Bridge-Baby-Monitor/
-- Copy and paste the folder called "Hackster" in the path "/ xilinx / jupyter_notebooks".
-- Copy and paste the contents of the "FPGA" folder in the following path "/ xilinx / pynq / overlays".
+- Copy and paste the folder called "Hackster" in the path "/xilinx/jupyter_notebooks".
+- Copy and paste the contents of the "FPGA" folder in the following path "/xilinx/pynq/overlays".
 
 
 1.9. Now we will make the configuration of the Ultra96 installing the corresponding packages so that our code runs without problems.
@@ -160,7 +160,7 @@ Download the files from the github repository.
 - This process will take between 5 and 15 min depending on the speed of the internet.
 - If all this process goes well, a sign that says "All the Packages was installed correctly" will be printed on the bottom of the console.
 
-When this process is finished, execute the command in part 3 to obtain the IP of the board. THIS PROCESS IS VERY IMPORTANT SINCE THE IP WILL BE USED LATER FOR THE COMMUNICATION OF THE RASPBERRY AND THE ARDUINO BY MQTT.
+When this process is finished, execute the command in part 3 to obtain the IP of the board. **THIS PROCESS IS VERY IMPORTANT SINCE THE IP WILL BE USED LATER FOR THE COMMUNICATION OF THE RASPBERRY AND THE ARDUINO BY MQTT.**
 
 1.10. Congratulations! We have made the corresponding configurations in the Ultra96 for now.
 
@@ -168,9 +168,10 @@ When this process is finished, execute the command in part 3 to obtain the IP of
 
 2. For this project this sensor was used because it was the sensor that we had at hand, it is also more interesting to show the integration of an Arduino Curie also called Arduino 101 to a solution of this type.
 
-PD.It is also possible to use any other Accelerometer and connect it directly to the Raspberry Pi Zero W that we will configure later.
+**PD.It is also possible to use any other Accelerometer and connect it directly to the Raspberry Pi Zero W that we will configure later.**
 
 2.1. Arduino curie configuration on the PC.
+
 - For this step you have two options:
     - Use the Arduino WebEditor with which you do not have to install anything, but you have to have an account in the arduino page to access, create it is free: 3
     - Link: https://create.arduino.cc/
@@ -182,9 +183,138 @@ PD.It is also possible to use any other Accelerometer and connect it directly to
 2.2.  Program the Arduino Curie with the code provided.
 
 - If you chose to use the WebEditor:
-- The code link: https://create.arduino.cc/editor/Altaga/88928a34-3c20-4968-96a6-6413fe2f357b/preview
+    - The code link: https://create.arduino.cc/editor/Altaga/88928a34-3c20-4968-96a6-6413fe2f357b/preview
 - If you chose to use the Desktop Editor:
-- In the github folder called "AccelerometerCurie" you will find the .ino that you have to program in the Arduino Curie.
+    - In the github folder called "AccelerometerCurie" you will find the .ino that you have to program in the Arduino Curie.
+
+
+# 3. Configure the Raspberry Pi Zero:
+
+- For this point it is also possible to use instead of the Arduino Curie and the Raspberry Pi Zero, an ESP32 or an ESP8266 with an accelerometer, connecting it through MQTT.
+
+3.1. Download the operating system of the Raspberry Pi Zero.
+
+- To download the operating system of the Raspberry enter the following link:
+- Link: https://downloads.raspberrypi.org/raspbian_lite_latest
+- The version that we will download will be the lite version to not load work to the raspberry.
+
+3.2. Flash in the SD operating system as shown in point 1.2 but with raspbian.
+
+- Flash with Etcher the raspberry operating system but DO NOT put it on the raspberry yet.
+
+3.3. Create a wpa_supplicant for the connection of the raspberry to the internet.
+
+- Since we have the operating system flashed, we copy and paste the files from the "RaspberryPi" folder directly into the SD card.
+- Once we open the "wpa_supplicant.conf" file with a text editor
+- In between the quotes of ssid write your wifi network and the psk the network key.
+
+        country = us
+        update_config = 1
+        ctrl_interface = / var / run / wpa_supplicant
+
+        network =
+        {
+        scan_ssid = 1
+        ssid = "yourwifi"
+        psk = "yourpassword"
+        }
+
+
+- We save the changes and remove the SD from the PC.
+
+3.4. We place the SD in the raspberry and connect it to its power source.
+
+- The power source of a Raspberry Pi Zero is recommended to be from 5 volts to 1A minimum.
+
+3.5. Once the raspberry has already started, we need to access it through SSH or with a keyboard and a monitor.
+
+- If you want to access it through SSH we need your IP.
+- In order to analyze your network and obtain the number we will have to use one of the following programs.
+- Advanced IP Scanner (Windows) or Angry IP Scanner program (Windows, Mac and Linux).
+- We can see in the screenshot below how we got the Raspberry IP.
+
+<img src="https://i.ibb.co/KLThvst/AngryIP.png"> 
+
+3.6. Copy the program inside the "RaspberrySoft" folder using FileZilla to the raspberry.
+
+- To pass the file via wifi to the raspberry we have to download another program called "FileZilla".
+- Link: https://filezilla-project.org/download.php?type=client
+- Once we have the program, we open it and put the data in the upper bar to access the raspberry.
+
+Host: RASPBERRYIP              Username:pi           Password:raspberry             port:22
+
+<img src="https://i.ibb.co/4Y80V96/filezilla.png"> 
+
+- Press Quickconnect.
+- Once we enter the Raspberry, we copy the file "exe.py" in the folder "/home/pi".
+
+3.7. Since we have the file in the raspberry we will have to connect the raspberry with ssh.
+
+- To connect using ssh to the raspberry we need the Putty program.
+- Link: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+- This program will let us access the command console of the raspberry.
+- In Linux, just open the terminal and put the following command.
+
+- “ssh pi@RASPBERRYIP”
+
+<img src="https://i.ibb.co/PxP86Xz/terminal.png">
+
+- Password: “raspberry”
+
+<img src="https://i.ibb.co/NthRqRc/terminal2.png">
+
+3.8.- First, we will install the necessary libraries for our program to work.
+
+- For it to work we just have to put the following command.
+
+      sudo apt-get update && sudo apt-get install -y python-pip && pip install pyserial paho-mqtt
+
+- This command will install the pyserial and paho-mqtt libraries
+
+3.9.- Once the console is open, we will edit the file that we passed in the previous paragraph to configure the IP of the Ultra96.
+
+In the terminal of the raspberry we will write the following command.
+     
+    sudo nano exe.py
+
+<img src="https://i.ibb.co/JCpSFDJ/terminalcomand.png">
+
+- The command will open the text editor where we can go through the file "exe.py".
+- We go down to the part shown in the image and instead of the text "ULTRA96IP" we will put the IP that we obtained in subsection 1.9.
+
+<img src="https://i.ibb.co/gwmdqyZ/Putty.png">
+
+- Since we change that text we will save the changes made by pressing "ctrl + o" and enter, and to exit the editor press "ctrl + c".
+
+3.10.- Put the program that runs whenever you turn on the raspberry.
+In order for the program to start together with raspbian and we no longer have to execute it, we will write the following command.
+
+    sudo nano /etc/rc.local
+
+<img src="https://i.ibb.co/t46LWqc/start.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
