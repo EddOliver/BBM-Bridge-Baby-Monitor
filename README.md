@@ -254,7 +254,7 @@ Host: RASPBERRYIP              Username:pi           Password:raspberry         
 
 <img src="https://i.ibb.co/NthRqRc/terminal2.png">
 
-3.8.- First, we will install the necessary libraries for our program to work.
+3.8. First, we will install the necessary libraries for our program to work.
 
 - For it to work we just have to put the following command.
 
@@ -262,7 +262,7 @@ Host: RASPBERRYIP              Username:pi           Password:raspberry         
 
 - This command will install the pyserial and paho-mqtt libraries
 
-3.9.- Once the console is open, we will edit the file that we passed in the previous paragraph to configure the IP of the Ultra96.
+3.9. Once the console is open, we will edit the file that we passed in the previous paragraph to configure the IP of the Ultra96.
 
 - In the terminal of the raspberry we will write the following command.
      
@@ -277,7 +277,7 @@ Host: RASPBERRYIP              Username:pi           Password:raspberry         
 
 - Since we change that text we will save the changes made by pressing "ctrl + o" and enter, and to exit the editor press "ctrl + c".
 
-3.10.- Put the program that runs whenever you turn on the raspberry.
+3.10. Put the program that runs whenever you turn on the raspberry.
 In order for the program to start together with raspbian and we no longer have to execute it, we will write the following command.
 
     sudo nano /etc/rc.local
