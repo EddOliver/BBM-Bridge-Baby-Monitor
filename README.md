@@ -10,6 +10,14 @@ Intelligent solution for structural monitoring based on the analysis of natural 
 * [Introduction](#introduction)
 * [Problematic](#problematic)
 * [Our Solution](#our-solution)
+* [Ultra96 Setup](#ultra96-setup)
+* [Accelerometer configuration in the Arduino Curie](#accelerometer-configuration-in-the-arduino-curie)
+* [Configure the Raspberry Pi Zero](#configure-the-raspberry-pi-zero)
+* [Connection diagrams of all the devices](#connection-diagrams-of-all-the-devices)
+* [Time to perform the first test](#time-to-perform-the-first-test)
+* [Tests](#tests)
+* [Results](#results)
+* [How to make your own FPGA developments in the Ultra96](#how-to-make-your-own-fpga-developments-in-the-ultra96)
 * [Where should I start?](#where-should-i-start)
 * [Future Rollout](#future-rollout)
 * [References](#references)
@@ -93,7 +101,7 @@ Code Flowchart.
 
 There are already universities in the world that make this type of census of bridges using strain gauges as they do in http://livinglabs.curtin.edu.au/#/, this shows us that the part of bridges sensing and obtaining the data is indispensable.
 
-# Ultra96 Setup.
+## Ultra96 Setup:
 
 1. For this solution the most important part will be the use of the Ultra96 which is the last board of Xilinx for the contest Create Intelligence at the Edge of the Hackster page, in this project we will take advantage of the board in addition to have a linux operating system, we can perform acceleration of software processes by creating hardware modules on an FPGA.
 
@@ -163,7 +171,7 @@ When this process is finished, execute the command in part 3 to obtain the IP of
 
 1.10. Congratulations! We have made the corresponding configurations in the Ultra96 for now.
 
-# Accelerometer configuration in the Arduino Curie.
+## Accelerometer configuration in the Arduino Curie:
 
 2. For this project this sensor was used because it was the sensor that we had at hand, it is also more interesting to show the integration of an Arduino Curie also called Arduino 101 to a solution of this type.
 
@@ -187,7 +195,7 @@ When this process is finished, execute the command in part 3 to obtain the IP of
     - In the github folder called "AccelerometerCurie" you will find the .ino that you have to program in the Arduino Curie.
 
 
-# 3. Configure the Raspberry Pi Zero:
+## Configure the Raspberry Pi Zero:
 
 3. For this point it is also possible to use instead of the Arduino Curie and the Raspberry Pi Zero, an ESP32 or an ESP8266 with an accelerometer, connecting it through MQTT.
 
@@ -303,7 +311,7 @@ In order for the program to start together with raspbian and we no longer have t
 3.11. Once we finish editing this file we are ready to connect everything and run our program in the Ultra96.
 Before proceeding, disconnect the raspberry and the arduino from their sources because we are going to connect them to each other.
 
-# Connection diagrams of all the devices.
+## Connection diagrams of all the devices:
 
 4.1. Schematic:
 
@@ -315,7 +323,7 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 <img src="https://i.ibb.co/y0FNfCq/Fisicoa.jpg">
 
-# Time to perform the first test:
+## Time to perform the first test:
 
 5.1. Connect the Ultra96 to the network and activate Mosquitto.
 
@@ -345,7 +353,7 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 <img src="https://i.ibb.co/Q9nnM3N/results1.png">
 
-# Tests.
+## Tests:
 
 6. Since the project was made, it was time to test it on a platform where we could recreate an oscillatory movement that the sensors could capture.
 
@@ -369,10 +377,12 @@ Video: Click on the image
 
 Video of the working prototype.
 
-# Results.
+## Results:
+
+7.
 
 
-# How to make your own FPGA developments in the Ultra96.
+## How to make your own FPGA developments in the Ultra96:
 
 8. For this part of the tutorial I will show you how to make your own custom modules for the FPGA in a simple way using the two softwares provided by Xilinx, which they are.
 
@@ -606,7 +616,7 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
         # After this, the data was in your out_buffer
 
-8.4. Aquí mostramos algunos resultados donde demostramos que usar diseños de FPGA es una ventaja.
+8.4.Here we show some results where we show that using FPGA designs is an advantage.
 
 <img src="https://i.ibb.co/HtLYmg0/estadistica.png">
 
