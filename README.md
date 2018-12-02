@@ -363,8 +363,11 @@ Video of the working prototype.
 
 ## Results:
 
-7.
+7.1. The results of the tests in the simulator and the tests in the field were the expected ones, the effective reaction system and the stimuli generated. When analyzing the data of the field tests, the following results were obtained.
 
+<img src="https://i.ibb.co/CWvRQjh/Frecuencias.png">
+
+7.2. We obtained that the greatest amplitude in the bridge was generated at 0.33 Hz. This being the natural frequency of the bridge, the objective of the model we obtain will be to analyze if the bridge through maintenance is decreasing that amplitude in its natural frequency.
 
 ## How to make your own FPGA developments in the Ultra96:
 
@@ -373,7 +376,7 @@ Video of the working prototype.
 - Vivado Design Suite - HLx Editions and Vivado High-Level Synthesis (Included in the Suite)
 - Direct Download: https://www.xilinx.com/member/forms/download/xef-vivado.html?filename=Xilinx_Vivado_SDK_2018.2_0614_1954.tar.gz
 
-8.1 Development of module with Vivado code High-Level Synthesis.
+8.1. Development of module with Vivado code High-Level Synthesis.
 
 - We enter Vivado High-Level Synthesis, where the following options menu will appear and where we will select "Create New Project"
 
@@ -467,7 +470,7 @@ Video of the working prototype.
 
 <img src="https://i.ibb.co/B6BF4pS/9.png">
 
-8.2.- Development of overlay with blocks in Vivado Design Suite - HLx Editions.
+8.2. Development of overlay with blocks in Vivado Design Suite - HLx Editions.
 
 - First when opening the program we will have to create a new project.
 
@@ -567,7 +570,7 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
 - Once this is done we will paste both files in the Overlays folder of the Ultra96 as we did in subsection 1.8.
 
-8.3.- How to call our FPGA module in Python.
+8.3. How to call our FPGA module in Python.
 
 - Copy this code to a jupyter notebook for the module to work.
 
@@ -600,7 +603,7 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
         # After this, the data was in your out_buffer
 
-8.4.Here we show some results where we show that using FPGA designs is an advantage.
+8.4. Here we show some results where we show that using FPGA designs is an advantage.
 
 <img src="https://i.ibb.co/HtLYmg0/estadistica.png">
 
