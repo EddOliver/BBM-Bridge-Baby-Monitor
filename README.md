@@ -293,8 +293,28 @@ In order for the program to start together with raspbian and we no longer have t
 
 <img src="https://i.ibb.co/t46LWqc/start.png">
 
+- Inside the file we will have to write the following as shown in the image.
 
+      sudo python /home/pi/exe.py
+      
+<img src="https://i.ibb.co/177pdcd/start2.png">
 
+- As we add that text we will save the changes made by pressing "ctrl + o" and enter, and to exit the editor press "ctrl + c".
+
+3.11. Once we finish editing this file we are ready to connect everything and run our program in the Ultra96.
+Before proceeding, disconnect the raspberry and the arduino from their sources because we are going to connect them to each other.
+
+# Connection diagrams of all the devices.
+
+Schematic:
+
+<img src="https://i.ibb.co/QXBvKQV/Ultra-Conections.png" width="400"><img src="https://i.ibb.co/wYhBXRr/RPIEsquema.png" width="400">
+
+Real connections:
+
+- The black box below the raspberry is a power bank of 5v - 10000mA.
+
+<img src="https://i.ibb.co/y0FNfCq/Fisicoa.jpg">
 
 
 
