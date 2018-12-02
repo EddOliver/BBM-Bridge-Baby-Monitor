@@ -108,12 +108,12 @@ The operating system that comes by default in the SD card that comes with the Ul
 To Flash the operating system in the SD, I recommend a minimum size for the SD of 16 GB.
 I recommend using the following software which works in any operating system, but you can use the program that you like the most.
 
-    - Link: https://www.balena.io/etcher/
-    - Remember that before Flash the operating system you have to format the SD.
+- Link: https://www.balena.io/etcher/
+- Remember that before Flash the operating system you have to format the SD.
 
 1.3. Once the operating system is flashed, place the SD card in the correct slot of the Ultra96, connect a microUSB cable to the laptop, the power cable and press the power button as shown in the following diagram.
 
-    - Remember that the minimum power the card can have is 12 Volts at 2 A.
+- Remember that the minimum power the card can have is 12 Volts at 2 A.
 
 <img src="https://i.ibb.co/QXBvKQV/Ultra-Conections.png">
 
@@ -126,39 +126,39 @@ Video: Click on the image
 
 1.5. Once we have connected the card, we will notice that the connected memory will appear on our connected USB devices.
 
-    - The Ultra96 creates an Ethernet PCI connection and when we see that USB memory connected it means that we are ready to start working.
+- The Ultra96 creates an Ethernet PCI connection and when we see that USB memory connected it means that we are ready to start working.
 
 <img src="https://i.ibb.co/k42JcTZ/USB.png">
 
 1.6. Enter the web interface.
 
-    - To access the web interface we will enter the following IP "192.168.3.1".
-    - The board will ask us for an access code, the key is "xilinx".
-Already in the interface you can see folders and a Jupyter Notebook, the board has by default installed Python 3 for Notebooks.
+- To access the web interface we will enter the following IP "192.168.3.1".
+- The board will ask us for an access code, the key is "xilinx".
+- Already in the interface you can see folders and a Jupyter Notebook, the board has by default installed Python 3 for Notebooks.
 
 1.7. Access the files on the card.
 
-    - To access the files on the card, through the smb connection according to the OS you will have to go to the file browser and put in the address bar.
-        - \\ 192.168.3.1 \ xilinx (for Windows, tested on Windows 10).
-        - smb: //192.168.3.1/xilinx (for Linux, tested on Ubuntu 18.04)
-        - On the Mac, it is not possible to connect correctly due to the USB Ethernet PCI connection protocol. I recommend that you use another operating system to be able to configure the board (maybe you can use a virtual machine with linux)
+- To access the files on the card, through the smb connection according to the OS you will have to go to the file browser and put in the address bar.
+    - \\ 192.168.3.1 \ xilinx (for Windows, tested on Windows 10).
+    - smb: //192.168.3.1/xilinx (for Linux, tested on Ubuntu 18.04)
+    - On the Mac, it is not possible to connect correctly due to the USB Ethernet PCI connection protocol. I recommend that you use another operating system to be able to configure the board (maybe you can use a virtual machine with linux)
 1.8. Download and save the necessary files on the board.
 Download the files from the github repository.
 
-    - Link: https://github.com/EddOliver/BBM-Bridge-Baby-Monitor/
-    - Copy and paste the folder called "Hackster" in the path "/ xilinx / jupyter_notebooks".
-    - Copy and paste the contents of the "FPGA" folder in the following path "/ xilinx / pynq / overlays".
+- Link: https://github.com/EddOliver/BBM-Bridge-Baby-Monitor/
+- Copy and paste the folder called "Hackster" in the path "/ xilinx / jupyter_notebooks".
+- Copy and paste the contents of the "FPGA" folder in the following path "/ xilinx / pynq / overlays".
 
 
 1.9. Now we will make the configuration of the Ultra96 installing the corresponding packages so that our code runs without problems.
 
-    - For the initial configuration inside the "Hackster" folder you have to open the notebook called "First_Setup.ipynb".
-    - Once inside the Notebook, run the command in point 1.
-    - This command configures the WiFi network on the board, in order to download the packages.
-    - If it is connected correctly, the text "WiFi Ready" will be printed.
-    - When it finishes executing we will run the command of subsection 2 which downloads the necessary packages for the board to work.
-    - This process will take between 5 and 15 min depending on the speed of the internet.
-    - If all this process goes well, a sign that says "All the Packages was installed correctly" will be printed on the bottom of the console.
+- For the initial configuration inside the "Hackster" folder you have to open the notebook called "First_Setup.ipynb".
+- Once inside the Notebook, run the command in point 1.
+- This command configures the WiFi network on the board, in order to download the packages.
+- If it is connected correctly, the text "WiFi Ready" will be printed.
+- When it finishes executing we will run the command of subsection 2 which downloads the necessary packages for the board to work.
+- This process will take between 5 and 15 min depending on the speed of the internet.
+- If all this process goes well, a sign that says "All the Packages was installed correctly" will be printed on the bottom of the console.
 
 When this process is finished, execute the command in part 3 to obtain the IP of the board. THIS PROCESS IS VERY IMPORTANT SINCE THE IP WILL BE USED LATER FOR THE COMMUNICATION OF THE RASPBERRY AND THE ARDUINO BY MQTT.
 
@@ -171,20 +171,20 @@ When this process is finished, execute the command in part 3 to obtain the IP of
 PD.It is also possible to use any other Accelerometer and connect it directly to the Raspberry Pi Zero W that we will configure later.
 
 2.1. Arduino curie configuration on the PC.
-    - For this step you have two options:
-        - Use the Arduino WebEditor with which you do not have to install anything, but you have to have an account in the arduino page to access, create it is free: 3
-        - Link: https://create.arduino.cc/
+- For this step you have two options:
+    - Use the Arduino WebEditor with which you do not have to install anything, but you have to have an account in the arduino page to access, create it is free: 3
+    - Link: https://create.arduino.cc/
 
-    - If you prefer to use the editor in the Arduino IDE Desktop Editor, read the official Arduino 101 documentation for information on how to install the arduino curie according to your operating system.
-        - Link: https://www.arduino.cc/en/Guide/Arduino101
+- If you prefer to use the editor in the Arduino IDE Desktop Editor, read the official Arduino 101 documentation for information on how to install the arduino curie according to your operating system.
+    - Link: https://www.arduino.cc/en/Guide/Arduino101
 
 
 2.2.  Program the Arduino Curie with the code provided.
 
-    - If you chose to use the WebEditor:
-    - The code link: https://create.arduino.cc/editor/Altaga/88928a34-3c20-4968-96a6-6413fe2f357b/preview
-    - If you chose to use the Desktop Editor:
-    - In the github folder called "AccelerometerCurie" you will find the .ino that you have to program in the Arduino Curie.
+- If you chose to use the WebEditor:
+- The code link: https://create.arduino.cc/editor/Altaga/88928a34-3c20-4968-96a6-6413fe2f357b/preview
+- If you chose to use the Desktop Editor:
+- In the github folder called "AccelerometerCurie" you will find the .ino that you have to program in the Arduino Curie.
 
 
 
