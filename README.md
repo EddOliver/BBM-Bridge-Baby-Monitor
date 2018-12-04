@@ -365,19 +365,17 @@ Video of the working prototype.
 
 7.1. The results of the tests in the simulator and the tests in the field were the expected ones, the effective reaction system and the stimuli generated. When analyzing the data of the field tests, the following results were obtained.
 
-<img src="https://i.ibb.co/CWvRQjh/Frecuencias.png">
+<img src="https://i.ibb.co/pQnbj4t/Frecuencia.png">
 
 7.2. We obtained that the greatest amplitude in the bridge was generated at 0.33 Hz. This being the natural frequency of the bridge, the objective of the model we obtain will be to analyze if the bridge through maintenance is decreasing that amplitude in its natural frequency.
 
-The data uploaded in cloudant we can see them through a python console, in our case we decided to use a python console created in Watson Studio and once there connect it with Cloudant to see the data online and not have to access the bridge.
-
-How Create a Watson Studio Python Eviroment:
+- How Create a Watson Studio Python Eviroment:
 https://developer.ibm.com/tutorials/tensorflow-on-dsx/
 
-How create a Cloudant client:
+- How create a Cloudant client:
 https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.html#creating-and-populating-a-simple-ibm-cloudant-database-on-ibm-cloud
 
-The data uploaded in cloudant we can see them through a python console, in our case we decided to use a python console created in Watson Studio and once there connect it with Cloudant to see the data online and not have to access the bridge, the code used in the virtual environment is in the folder "PythonCloudant"
+- The data uploaded in cloudant we can see them through a python console, in our case we decided to use a python console created in Watson Studio and once there connect it with Cloudant to see the data online and not have to access the bridge, the code used in the virtual environment is in the folder "PythonCloudant"
 
 ## How to make your own FPGA developments in the Ultra96:
 
