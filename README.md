@@ -369,6 +369,16 @@ Video of the working prototype.
 
 7.2. We obtained that the greatest amplitude in the bridge was generated at 0.33 Hz. This being the natural frequency of the bridge, the objective of the model we obtain will be to analyze if the bridge through maintenance is decreasing that amplitude in its natural frequency.
 
+The data uploaded in cloudant we can see them through a python console, in our case we decided to use a python console created in Watson Studio and once there connect it with Cloudant to see the data online and not have to access the bridge.
+
+How Create a Watson Studio Python Eviroment:
+https://developer.ibm.com/tutorials/tensorflow-on-dsx/
+
+How create a Cloudant client:
+https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.html#creating-and-populating-a-simple-ibm-cloudant-database-on-ibm-cloud
+
+The data uploaded in cloudant we can see them through a python console, in our case we decided to use a python console created in Watson Studio and once there connect it with Cloudant to see the data online and not have to access the bridge, the code used in the virtual environment is in the folder "PythonCloudant"
+
 ## How to make your own FPGA developments in the Ultra96:
 
 8. For this part of the tutorial I will show you how to make your own custom modules for the FPGA in a simple way using the two softwares provided by Xilinx, which they are.
