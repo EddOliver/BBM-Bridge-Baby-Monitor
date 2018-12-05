@@ -59,7 +59,7 @@ Other forms of predictive solutions in bridges do not provide accurate data, or 
 
 ## Our Solution:
 
-Our solution in placing a pair of vibration sensors strategically in the bridge to perform a continuous monitoring of data. And through AI and Machine Learning generate predictive models for the wear and tear of the bridge, and to recommend the used scheduling for preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
+Our solution in placing a pair of vibration sensors strategically in bridges to perform a continuous monitoring. And through AI and Machine Learning we will generate predictive models for the wear and tear of the bridge, and to recommend the user scheduling for preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
 
 Bill of materials.
 
@@ -86,26 +86,26 @@ Code Flowchart.
 
 <img src="https://i.ibb.co/b78TxQr/Blank-Diagram-1.png">
 
-There are already universities in the world, performing this type of census in structures using strain gauges as they do in: http://livinglabs.curtin.edu.au/#/, this shows us that structural sensing is indispensable for Industry 4.0.
+Several Universities are already performing this type of census in structures using strain gauges such as: http://livinglabs.curtin.edu.au/#/, this shows us that structural sensing is indispensable for Industry 4.0.
 
 ## Ultra96 Setup:
 
-1. The most important part, for this solution, will be the use of the Ultra96 which is the latest board of Xilinx and 96 boards. In this project we will take maximum advantage of the board in addition to its linux operating system, with this we can perform software acceleration by creating hardware modules on the Ultra96's FPGA.
+1. The most important part, for this solution, will be the use of the Ultra96 which is Xilinx and 96 boards' latest board. In this project we will take maximum advantage of the board in addition to its linux operating system, to perform software acceleration by creating hardware modules on the Ultra96's FPGA.
 
 1.1. Download the operating system for the Ultra96:
-The operating system that comes by default in the SD card of the Ultra96, is a system based on PetaLinux, that caused many problems for us, due to its inability to install packages using the "apt-get" command. The command was essential for the correct installation of some packages that we will be using later, therefore we settled to use another operating system that Xilinx offers from its official sources: Pynq. And here it is:
+The operating system that comes by default in the SD card of the Ultra96, is a system based on PetaLinux. It caused many problems for us due to its inability to install packages using the "apt-get" command. The command was essential for the correct installation of some packages that we would be using later, therefore we settled to use another operating system that Xilinx offers from its official sources: Pynq. And here it is:
 
 - Link: http://avnet.me/ultra96_pynq_sd_image
 - Link: Documents in the Wiki: D.
 
 1.2. Flashing the operating system on an SD card.
-To Flash the operating system in the SD card, we recommend a minimum size for the SD of 16 GB.
+To Flash the operating system in the SD card, we recommend a minimum size of SD of 16 GB.
 We recommend the following software which works in any operating system, but you can use your preferred one:
 
 - Link: https://www.balena.io/etcher/
 - Remember that before Flashing the operating system you have to format the SD.
 
-1.3. Once the operating system is flashed, place the SD card in the correct slot of the Ultra96, connect a microUSB cable to the laptop, the power cable and press the power button as shown in the following diagram.
+1.3. Once the operating system is flashed, place the SD card in the correct slot of the Ultra96, connect a microUSB cable to the laptop, also the power cable, and press the power button as shown in the following diagram.
 
 - Remember that the minimum power the card can have is 12 Volts at 2 A.
 
