@@ -15,6 +15,7 @@ Intelligent solution for structural monitoring based on the analysis of natural 
 * [Configure the Raspberry Pi Zero](#configure-the-raspberry-pi-zero)
 * [Connection diagrams of all the devices](#connection-diagrams-of-all-the-devices)
 * [Time to perform the first test](#time-to-perform-the-first-test)
+* [Create your Dashboard](#create-your-dashboard)
 * [Tests](#tests)
 * [Results](#results)
 * [How to make your own FPGA developments in the Ultra96](#how-to-make-your-own-fpga-developments-in-the-ultra96)
@@ -337,11 +338,13 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 <img src="https://i.ibb.co/Q9nnM3N/results1.png">
 
+## Create your Dashboard:
+
 ## Tests:
 
-6. Since the project was made, it was time to test it on a platform where we could recreate an oscillatory movement that the sensors could capture.
+7. Since the project was made, it was time to test it on a platform where we could recreate an oscillatory movement that the sensors could capture.
 
-6.1. Test platform with Arduino.
+7.1. Test platform with Arduino.
 
 A platform with an arduino system and a shield of motors was realized, which served to recreate a harmonic movement with the motors and in addition to make it portable it was decided to use a Power Bank.
 
@@ -355,7 +358,7 @@ Video: Click on the image
 
 - The results showed how the notification of the bridge when maintenance is required was sent correctly when the sensor measures an excessive amplitude over an X frequency.
 
-6.2. Actual test on pedestrian bridge.
+7.2. Actual test on pedestrian bridge.
 
 - For the final test it was decided to take the system to a pedestrian bridge in our university, we monitoring every so often to verify that the system works correctly.
 
@@ -364,14 +367,15 @@ Video: Click on the image
 
 ## Results:
 
-7.1. The results of the tests in the simulator and the tests in the field were the expected ones, the effective reaction system and the stimuli generated. When analyzing the data of the field tests, the following results were obtained.
+8.1. The results of the tests in the simulator and the tests in the field were the expected ones, the effective reaction system and the stimuli generated. When analyzing the data of the field tests, the following results were obtained.
 
 <img src="https://i.ibb.co/pQnbj4t/Frecuencia.png">
 
-7.2. We obtained that the greatest amplitude in the bridge was generated at 0.33 Hz. This being the natural frequency of the bridge, the objective of the model we obtain will be to analyze if the bridge through maintenance is decreasing that amplitude in its natural frequency.
+8.2. We obtained that the greatest amplitude in the bridge was generated at 0.33 Hz. This being the natural frequency of the bridge, the objective of the model we obtain will be to analyze if the bridge through maintenance is decreasing that amplitude in its natural frequency.
 
-- How Create a Watson Studio Python Eviroment:
-https://developer.ibm.com/tutorials/tensorflow-on-dsx/
+- How Create a Watson IoT application.
+
+https://github.com/altaga/The-Ultimate-IBM-Watson-IoT-Platform-Guide
 
 - How create a Cloudant client:
 https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.html#creating-and-populating-a-simple-ibm-cloudant-database-on-ibm-cloud
@@ -380,12 +384,12 @@ https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.htm
 
 ## How to make your own FPGA developments in the Ultra96:
 
-8. For this part of the tutorial I will show you how to make your own custom modules for the FPGA in a simple way using the two softwares provided by Xilinx, which they are.
+9. For this part of the tutorial I will show you how to make your own custom modules for the FPGA in a simple way using the two softwares provided by Xilinx, which they are.
 
 - Vivado Design Suite - HLx Editions and Vivado High-Level Synthesis (Included in the Suite)
 - Direct Download: https://www.xilinx.com/member/forms/download/xef-vivado.html?filename=Xilinx_Vivado_SDK_2018.2_0614_1954.tar.gz
 
-8.1. Development of module with Vivado code High-Level Synthesis.
+9.1. Development of module with Vivado code High-Level Synthesis.
 
 - We enter Vivado High-Level Synthesis, where the following options menu will appear and where we will select "Create New Project"
 
@@ -579,7 +583,7 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
 - Once this is done we will paste both files in the Overlays folder of the Ultra96 as we did in subsection 1.8.
 
-8.3. How to call our FPGA module in Python.
+9.3. How to call our FPGA module in Python.
 
 - Copy this code to a jupyter notebook for the module to work.
 
@@ -612,7 +616,7 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
         # After this, the data was in your out_buffer
 
-8.4. Here we show some results where we show that using FPGA designs is an advantage.
+9.4. Here we show some results where we show that using FPGA designs is an advantage.
 
 <img src="https://i.ibb.co/HtLYmg0/estadistica.png">
 
