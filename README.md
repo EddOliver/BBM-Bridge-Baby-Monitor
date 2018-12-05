@@ -357,9 +357,10 @@ Video: Click on the image
 
 6.2. Actual test on pedestrian bridge.
 
-- For the final test it was decided to take the system to a pedestrian bridge in our university (if the one of the video), where we have put the system to monitor 24 hours the advance of the pedestrians, all this asking for the corresponding permits in the university and we monitoring every so often to verify that the system works correctly.
+- For the final test it was decided to take the system to a pedestrian bridge in our university, we monitoring every so often to verify that the system works correctly.
 
-Video of the working prototype.
+Video: Click on the image
+[![BBM - Demo](https://i.ibb.co/TR9vzWw/BBMLogo.png)](https://youtu.be/4BNzPV9-NgQ)
 
 ## Results:
 
