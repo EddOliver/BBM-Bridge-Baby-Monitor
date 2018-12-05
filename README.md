@@ -2,7 +2,7 @@
 
 <img src="https://i.ibb.co/TR9vzWw/BBMLogo.png" width="500">
 
-Intelligent solution for structural monitoring based on the analysis of natural frequencies in bridges.
+Intelligent IoT Edge solution for structural monitoring, based on the analysis of natural frequencies in bridges. 
 
 <img src="https://i.ibb.co/y0FNfCq/Fisicoa.jpg">
 
@@ -31,7 +31,7 @@ DOKI INTRODUCTION
 
 
 
-Do not believe me yet?, look what happened to the pedestrian bridges of my university.
+Do not believe me yet?, look what happened to the pedestrian bridges in my university.
 
 Video: Click on the image
 
@@ -41,7 +41,7 @@ Video: Click on the image
 
 <img src="https://bridgemastersinc.com/wp-content/uploads/2016/06/I-35W-Mississippi-River-Bridge-collapse.jpg" width="800">
 
-The little monitoring that bridges have in the world and the structural damage that they can have over time and as the lack of preventive maintenance can cause a partial or total failure of the bridge.
+The main problematic is the little monitoring that bridges have, and the structural damage that they can have over time and as the lack of preventive maintenance can cause a partial or total failure of the bridge.
 
 The main problems by which a bridge can fail and fall are:
 
@@ -53,15 +53,17 @@ The main problems by which a bridge can fail and fall are:
 - Unexpected events
 - A combination of issues.
 
-If we could notice a failure in the structure beforehand this would cut costs of maintenance and also prevent any disaster, therefore it is the main problem we want to fight with our solution.
+If we could notice a failure in the structure beforehand this would cut costs of maintenance and also prevent any disaster, therefore that is the main problem we want to fight with our solution.
+
+Other forms of predictive solutions in bridges do not provide accurate data, or require a technician to go directly to the place to check manually.
 
 ## Our Solution:
 
-The solution would be to place a pair of vibration sensors strategically in the bridge to perform a continuous monitoring of the data and through AI and Machine Learning generate predictive models for the wear of the bridge, and preventive maintenance schedules for them.
+Our solution in placing a pair of vibration sensors strategically in the bridge to perform a continuous monitoring of data. And through AI and Machine Learning generate predictive models for the wear and tear of the bridge, and to recommend the used scheduling for preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
 
 Bill of materials.
 
-- Board Ultra96.
+- Ultra96 Board .
 - SD card, 16 GB, Class 10 (Ultra96).
 - Power Source, 5v 2.5 A, Jack, (Ultra96)
 - Arduino 101 (Arduino Curie).
@@ -73,35 +75,35 @@ Bill of materials.
 - USB Type A Male to USB Type B Male (Arduino Cable).
 - Power Bank 5v.
 
-Optional:
+Optional (Our own testing platform):
 - Arduino UNO.
 - USB Type A Male to USB Type B Male (Arduino Cable).
-- Arduino Motor Shield.
-- 2x Angle Servo.
+- Arduino Motor Shield (for Servos).
+- 2x small Servo motors.
 - Power Bank 5v (Another).
 
 Code Flowchart.
 
 <img src="https://i.ibb.co/b78TxQr/Blank-Diagram-1.png">
 
-There are already universities in the world that make this type of census of bridges using strain gauges as they do in http://livinglabs.curtin.edu.au/#/, this shows us that the part of bridges sensing and obtaining the data is indispensable.
+There are already universities in the world, performing this type of census in structures using strain gauges as they do in: http://livinglabs.curtin.edu.au/#/, this shows us that structural sensing is indispensable for Industry 4.0.
 
 ## Ultra96 Setup:
 
-1. For this solution the most important part will be the use of the Ultra96 which is the last board of Xilinx for the contest Create Intelligence at the Edge of the Hackster page, in this project we will take advantage of the board in addition to have a linux operating system, we can perform acceleration of software processes by creating hardware modules on an FPGA.
+1. The most important part, for this solution, will be the use of the Ultra96 which is the latest board of Xilinx and 96 boards. In this project we will take maximum advantage of the board in addition to its linux operating system, with this we can perform software acceleration by creating hardware modules on the Ultra96's FPGA.
 
-1.1. Download the operating system that the Ultra96 will use
-The operating system that comes by default in the SD card that comes with the Ultra96 is a system based on PetaLinux, which to start carrying out this project caused many problems due to not being able to install packages using the "apt-get" command. which was essential for the correct installation of some packages that we will use later, therefore it was decided to change to the other operating system that Xilinx offers from its official sources.
+1.1. Download the operating system for the Ultra96:
+The operating system that comes by default in the SD card of the Ultra96, is a system based on PetaLinux, that caused many problems for us, due to its inability to install packages using the "apt-get" command. The command was essential for the correct installation of some packages that we will be using later, therefore we settled to use another operating system that Xilinx offers from its official sources: Pynq. And here it is:
 
 - Link: http://avnet.me/ultra96_pynq_sd_image
 - Link: Documents in the Wiki: D.
 
-1.2. Flash the operating system on an SD card.
-To Flash the operating system in the SD, I recommend a minimum size for the SD of 16 GB.
-I recommend using the following software which works in any operating system, but you can use the program that you like the most.
+1.2. Flashing the operating system on an SD card.
+To Flash the operating system in the SD card, we recommend a minimum size for the SD of 16 GB.
+We recommend the following software which works in any operating system, but you can use your preferred one:
 
 - Link: https://www.balena.io/etcher/
-- Remember that before Flash the operating system you have to format the SD.
+- Remember that before Flashing the operating system you have to format the SD.
 
 1.3. Once the operating system is flashed, place the SD card in the correct slot of the Ultra96, connect a microUSB cable to the laptop, the power cable and press the power button as shown in the following diagram.
 
