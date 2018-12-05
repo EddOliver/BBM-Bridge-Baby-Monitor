@@ -340,6 +340,14 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 ## Create your Dashboard:
 
+///////////////////////EN DESARROLLO/////////////////
+
+Para finalizar debemos realizar un dashboard con Watson IoT Cloud para visualizar los datos en tiempo real.
+
+En el codigo de Pyt
+
+///////////////////////EN DESARROLLO/////////////////
+
 ## Tests:
 
 7. Since the project was made, it was time to test it on a platform where we could recreate an oscillatory movement that the sensors could capture.
