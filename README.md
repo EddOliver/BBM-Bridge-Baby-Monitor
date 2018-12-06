@@ -342,19 +342,55 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 ## Create your Dashboard:
 
-///////////////////////EN DESARROLLO/////////////////
+//////////////////////TRADUCIR////////////////
 
 6. Para finalizar debemos realizar un dashboard con Watson IoT Cloud para visualizar los datos en tiempo real.
 
 - En el codigo principal estamos posteando en Watson IoT, el como crear la credenciales ya esta en otro de nuestros repositorios.
 
+- How Create a Cloudant instance (Change the credential in the "Bridges" code for your credentials).
+
+https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-an-ibm-cloudant-instance-on-ibm-cloud
+
+- Your API for pushetta is in this link (You need to create an account first, its free :3).
+
+http://www.pushetta.com/my/dashboard/
+
 - How Create a Watson IoT application.
 
 https://github.com/altaga/The-Ultimate-IBM-Watson-IoT-Platform-Guide
 
-- Para este caso la 
+- Para este caso vamos a ir a la esquina superior a la seccion de "Boards".
 
-///////////////////////EN DESARROLLO/////////////////
+<img src="https://i.ibb.co/hmBx1pK/1png.png">
+
+- Una vez en esta seccion creamos una nueva board.
+
+<img src="https://i.ibb.co/ZY5DYdY/2.png">
+
+- A la board le ponemos cualquier nombre.
+
+<img src="https://i.ibb.co/JjT202v/3.png">
+
+- En la esquina superior derecha creamos dos nuevas cards (Una "Line chart" y una "Value").
+
+<img src="https://i.ibb.co/n8Pjmwk/4.png">
+
+- Para cada card debemos seleccionar el dispositivo.
+
+<img src="https://i.ibb.co/wRT5w2v/5.png">
+
+- Para la Line chart usaremos la siguiente configuracion de events and properties, esta grafica va a mostrar los valores de riesgo en XYZ en tiempo real.
+
+<img src="https://i.ibb.co/NC6ktjx/6.png"><img src="https://i.ibb.co/qpsvRGG/7.png">
+
+- Por ultimo en la card de "Value" usaremos la siguiente configuracion.
+
+<img src="https://i.ibb.co/XLsrZj1/8.png">
+
+- Una vez hemos terminado esta configuracion ya tendremos nuestro dashboard.
+
+///////////////////////TRADUCIR/////////////////
 
 ## Tests:
 
