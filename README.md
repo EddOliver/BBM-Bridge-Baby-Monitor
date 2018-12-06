@@ -344,9 +344,15 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 ///////////////////////EN DESARROLLO/////////////////
 
-Para finalizar debemos realizar un dashboard con Watson IoT Cloud para visualizar los datos en tiempo real.
+6. Para finalizar debemos realizar un dashboard con Watson IoT Cloud para visualizar los datos en tiempo real.
 
-En el codigo de Pyt
+- En el codigo principal estamos posteando en Watson IoT, el como crear la credenciales ya esta en otro de nuestros repositorios.
+
+- How Create a Watson IoT application.
+
+https://github.com/altaga/The-Ultimate-IBM-Watson-IoT-Platform-Guide
+
+- Para este caso la 
 
 ///////////////////////EN DESARROLLO/////////////////
 
@@ -356,15 +362,15 @@ En el codigo de Pyt
 
 7.1. Test platform with Arduino.
 
-A platform with an arduino system and a shield of motors was realized, which served to recreate a harmonic movement with the motors and in addition to make it portable it was decided to use a Power Bank.
+A platform with an arduino system and a shield of motors was realized, which served to recreate a harmonic abdnormal movement with the motors and in addition to make it portable it was decided to use a Power Bank.
 
 <img src="https://i.ibb.co/L8R6m8N/Platform.jpg">
 
-- Once we tested the test platform, we put the sensor on the platform so that we could get an answer.
+- Once the platform works, we put the sensor on the platform so that we could get an abnormal answer.
 
 Video: Click on the image
 
-[![BBM Test Platform](https://cdn.iconscout.com/icon/premium/png-256-thumb/bridge-199-673478.png)](https://www.youtube.com/watch?v=JY3IQGm-b5Y)
+[![BBM Test Platform](https://cdn.iconscout.com/icon/premium/png-256-thumb/bridge-199-673478.png)](https://youtu.be/KuoN3N4PJSM)
 
 - The results showed how the notification of the bridge when maintenance is required was sent correctly when the sensor measures an excessive amplitude over an X frequency.
 
@@ -372,7 +378,8 @@ Video: Click on the image
 
 - For the final test it was decided to take the system to a pedestrian bridge in our university, we monitoring every so often to verify that the system works correctly.
 
-Video: Click on the image
+Video: Click on the image:
+
 [![BBM - Demo](https://i.ibb.co/TR9vzWw/BBMLogo.png)](https://youtu.be/4BNzPV9-NgQ)
 
 ## Results:
@@ -383,14 +390,14 @@ Video: Click on the image
 
 8.2. We obtained that the greatest amplitude in the bridge was generated at 0.33 Hz. This being the natural frequency of the bridge, the objective of the model we obtain will be to analyze if the bridge through maintenance is decreasing that amplitude in its natural frequency.
 
+Useful guides:
+
 - How Create a Watson IoT application.
 
 https://github.com/altaga/The-Ultimate-IBM-Watson-IoT-Platform-Guide
 
 - How create a Cloudant client:
 https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.html#creating-and-populating-a-simple-ibm-cloudant-database-on-ibm-cloud
-
-- The data uploaded in cloudant we can see them through a python console, in our case we decided to use a python console created in Watson Studio and once there connect it with Cloudant to see the data online and not have to access the bridge, the code used in the virtual environment is in the folder "PythonCloudant"
 
 ## How to make your own FPGA developments in the Ultra96:
 
