@@ -382,7 +382,7 @@ https://github.com/altaga/The-Ultimate-IBM-Watson-IoT-Platform-Guide
 
 - Para la Line chart usaremos la siguiente configuracion de events and properties, esta grafica va a mostrar los valores de riesgo en XYZ en tiempo real.
 
-<img src="https://i.ibb.co/NC6ktjx/6.png"><img src="https://i.ibb.co/qpsvRGG/7.png">
+<img src="https://i.ibb.co/NC6ktjx/6.png" width="400"><img src="https://i.ibb.co/qpsvRGG/7.png" width="400">
 
 - Por ultimo en la card de "Value" usaremos la siguiente configuracion.
 
