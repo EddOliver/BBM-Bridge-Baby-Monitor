@@ -33,7 +33,7 @@ A “worst first” approach is not a cost-effective way to keep bridges healthy
 According to ASCE, the current cost to rehabilitate the nation’s bridges is more than $120 billion.
 As with most things earthquakes and other disasters also can suddenly pass and if there's not a precise monitoring, issues could be fatal.
 
-This is quite important for our team as he had to live this predicament in 2017. On September the 7th of 2017 there was an earthquake in Mexico City. At about 8.1 in the Richter scale it caused structural damage to several buildings around the city and a couple pedestrian bridges in the authors' University. And then we had a big earthquake in September 19th that decimated these damaged structures, and in the case of our University this was the result. 
+This is quite important for our team as he had to live this predicament in 2017. We had to pull statistics from the US as we do not have these kind of information available to us from our country (Mexico). On September the 7th of 2017 there was an earthquake in Mexico City. At about 8.1 in the Richter scale it caused structural damage to several buildings around the city and a couple pedestrian bridges in the authors' University. And then we had a big earthquake in September 19th that decimated these damaged structures, and in the case of our University this was the result. 
 
 Video: Click on the image
 
@@ -63,7 +63,7 @@ Other forms of predictive solutions in bridges do not provide accurate data, or 
 
 ## Our Solution:
 
-Our solution in placing a pair of vibration sensors strategically in bridges to perform a continuous monitoring. And through AI and Machine Learning we will generate predictive models for the wear and tear of the bridge, and to recommend the user scheduling for preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
+Our solution is to place a pair of vibration sensors strategically in bridges to perform a continuous monitoring. And through AI and Machine Learning we will generate predictive models for the wear and tear of the bridge, and to recommend the user scheduling for preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
 
 Bill of materials.
 
