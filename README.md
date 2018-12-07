@@ -163,9 +163,9 @@ When this process has finished, execute the command in part 3 to obtain the IP o
 
 1.10. We have made the initial setup for the Ultra96.
 
-## Accelerometer configuration in the Arduino Curie:
+## Accelerometer configuration for the Arduino 101:
 
-2. For this project this sensor was used because it was the sensor that we had at hand, it is also more interesting to show the integration of an Arduino 101 to a solution of this type.
+2. For this project the sensor on board of the Arduino 101 was used because it was the sensor that we had at hand, it is also more interesting to show the integration of an Arduino 101 to a solution of this type.
 
 **PD. It is also possible and reccomended to use any other Accelerometer or IMU and connect it directly to the Raspberry Pi Zero W that we will configure later. IMU's are expensive so we used what was at hand**
 
@@ -341,81 +341,79 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 <img src="https://i.ibb.co/cyTPBrJ/Results.png">
 
-5.5. Once all the data samples have been made, the system will take the stored data and load them into the machine learning model so that it learns each iteration and becomes a more precise continuous learning model.
+5.5. Once all the data samples have been made, the system will take the stored data and load it into the machine learning model so that it learns each iteration and becomes a more precise continuous learning model.
 
 <img src="https://i.ibb.co/Q9nnM3N/results1.png">
 
 ## Create your Dashboard:
 
-6. Para finalizar debemos realizar un dashboard con Watson IoT Cloud para visualizar los datos en tiempo real.
+6. Finally, we have to get some IoT capabilities, we will create a Watson IoT Dashboard to visualize the data remotely.
 
-- En el codigo principal estamos posteando en Watson IoT, el como crear la credenciales ya esta en otro de nuestros repositorios.
+- You can see in the main code that we are already posting on Watson IoT, to create credentials and setup we can refer you to another one of our projects:  https://github.com/EddOliver/AggroFox 
 
-- How Create a Cloudant instance (Change the credential in the "Bridges" code for your credentials).
+- To Create a Cloudant instance (Change the credential in the "Bridges" code for your credentials):
 
 https://console.bluemix.net/docs/services/Cloudant/tutorials/create_service.html#creating-an-ibm-cloudant-instance-on-ibm-cloud
 
-- Your API for pushetta is in this link (You need to create an account first, its free :3).
+- Your API for pushetta is in this link (You need to create an account first, its free).
 
 http://www.pushetta.com/my/dashboard/
 
-- How Create a Watson IoT application.
+- To create a Watson IoT application you can follow this one:
 
 https://github.com/altaga/The-Ultimate-IBM-Watson-IoT-Platform-Guide
 
-- Para este caso vamos a ir a la esquina superior a la seccion de "Boards".
+- But for this case we will go to the upper section to the "Boards" section.
 
 <img src="https://i.ibb.co/hmBx1pK/1png.png">
 
-- Una vez en esta seccion creamos una nueva board.
+- Once here, we create a new board..
 
 <img src="https://i.ibb.co/ZY5DYdY/2.png">
 
-- A la board le ponemos cualquier nombre.
+- Name it as you wish.
 
 <img src="https://i.ibb.co/JjT202v/3.png">
 
-- En la esquina superior derecha creamos dos nuevas cards (Una "Line chart" y una "Value").
+- On the upper left corner we create another two cards (One line chart and one with a "Value"), you can always experiment with more.
 
 <img src="https://i.ibb.co/n8Pjmwk/4.png">
 
-- Para cada card debemos seleccionar el dispositivo.
+- We have to select the device for every card.
 
 <img src="https://i.ibb.co/wRT5w2v/5.png">
 
-- Para la Line chart usaremos la siguiente configuracion de events and properties, esta grafica va a mostrar los valores de riesgo en XYZ en tiempo real.
+- For the line chart we will use the following setup of events and properties, this graph will show the risk values en XYZ in real time.
 
 <img src="https://i.ibb.co/NC6ktjx/6.png" width="400"><img src="https://i.ibb.co/qpsvRGG/7.png" width="400">
 
-- Por ultimo en la card de "Value" usaremos la siguiente configuracion.
+- Lastly, in the "Value" card, we will use the following setup:
 
 <img src="https://i.ibb.co/XLsrZj1/8.png">
 
-- Una vez hemos terminado esta configuracion ya tendremos nuestro dashboard.
-
-///////////////////////TRADUCIR/////////////////
+- Now you have a quick and easy IoT dashboard.
 
 ## Tests:
 
-7. Since the project was made, it was time to test it on a platform where we could recreate an oscillatory movement that the sensors could capture.
+7. For the project to be tested before going to the place where it would be implemented, we made a platform where we could recreate an oscillatory movement that the sensors could capture.
 
 7.1. Test platform with Arduino.
 
-A platform with an arduino system and a shield of motors was realized, which served to recreate a harmonic abdnormal movement with the motors and in addition to make it portable it was decided to use a Power Bank.
+A platform with an arduino system and a shield of motors was built for this purpose, which served to recreate a harmonic abnormal movement with the motors. To make it portable, we decided to use a Power Bank.
 
 <img src="https://i.ibb.co/L8R6m8N/Platform.jpg">
 
-- Once the platform works, we put the sensor on the platform so that we could get an abnormal answer.
+- Once the platform was working, we allocated the sensor on the platform so that we could get an abnormal response.
 
 Video: Click on the image
 
 [![BBM Test Platform](https://cdn.iconscout.com/icon/premium/png-256-thumb/bridge-199-673478.png)](https://youtu.be/KuoN3N4PJSM)
 
-- The results showed how the notification of the bridge when maintenance is required was sent correctly when the sensor measures an excessive amplitude over an X frequency.
+- The results showed how the notification was sent correctly when it was required as the sensor measured an excessive amplitude over an X frequency.
 
 7.2. Actual test on pedestrian bridge.
 
-- For the final test it was decided to take the system to a pedestrian bridge in our university, we monitoring every so often to verify that the system works correctly.
+- For the final test we decided to take the system to a pedestrian bridge in our university, we monitored every so often to verify that the system worked correctly.
 
 Video: Click on the image:
 
@@ -423,11 +421,11 @@ Video: Click on the image:
 
 ## Results:
 
-8.1. The results of the tests in the simulator and the tests in the field were the expected ones, the effective reaction system and the stimuli generated. When analyzing the data of the field tests, the following results were obtained.
+8.1. The results of the tests in the simulator and the tests in the field were the expected ones, as it was the effective reaction system and the stimuli generated. When analyzing the data of the field tests, the following results were obtained.
 
 <img src="https://i.ibb.co/pQnbj4t/Frecuencia.png">
 
-8.2. We obtained that the greatest amplitude in the bridge was generated at 0.33 Hz. This being the natural frequency of the bridge, the objective of the model we obtain will be to analyze if the bridge through maintenance is decreasing that amplitude in its natural frequency.
+8.2. We obtained that the greatest amplitude in the bridge was generated at 0.33 Hz. This being the natural frequency of the bridge, the objective of the model we obtain will be to analyze if the bridge, through maintenance is decreasing that amplitude in its natural frequency.
 
 Useful guides:
 
@@ -440,23 +438,23 @@ https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.htm
 
 ## How to make your own FPGA developments in the Ultra96:
 
-9. For this part of the tutorial I will show you how to make your own custom modules for the FPGA in a simple way using the two softwares provided by Xilinx, which they are.
+9. For this part of the tutorial, we will show you how to make your own custom modules for the FPGA in a simple way using the two softwares provided by Xilinx, which are:
 
 - Vivado Design Suite - HLx Editions and Vivado High-Level Synthesis (Included in the Suite)
 - Direct Download: https://www.xilinx.com/member/forms/download/xef-vivado.html?filename=Xilinx_Vivado_SDK_2018.2_0614_1954.tar.gz
 
-9.1. Development of module with Vivado code High-Level Synthesis.
+9.1. Development with Vivado code High-Level Synthesis.
 
-- We enter Vivado High-Level Synthesis, where the following options menu will appear and where we will select "Create New Project"
+- Open Vivado High-Level Synthesis, the options menu will appear and we will select "Create New Project"
 
 <img src="https://i.ibb.co/g9PYkm0/1.png">
 
 - In the "Project name" type the name you want.
-- In the route where it will be saved, I recommend it to be a personalized route where you know it is going to be saved (Note this route because it will serve later).
+- For the saving route, we recommend it to be a personalized route and take a note of it (this route because will be of importance later).
 
 <img src="https://i.ibb.co/QNMn5QH/1-1.png">
 
-- In "Top Function" write the name of the function, I recommend that it be a simple name and that you remember it for later.
+- In "Top Function" write the name of the function, we recommend that it be a simple name and that you remember it for later.
 
 <img src="https://i.ibb.co/f1FCBkw/3.png">
 
@@ -464,11 +462,11 @@ https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.htm
 
 <img src="https://i.ibb.co/RTr6QXB/4.png">
 
-- When we finish creating the file and add it, we will give it "Next" twice and a screen like the following one will appear, where we will select "Part Selection" to choose the part that has the Ultra96.
+- When we finish creating the file and adding it, we will give it "Next" twice and a screen like the following one will appear, where we will select "Part Selection" to choose the part that the Ultra96 has.
 
 <img src="https://i.ibb.co/FXpYrvB/5-5.png">
 
-- The part of the Ultra96 is an "xczu3eg-sbva484-1-e"
+- The part of the Ultra96 is "xczu3eg-sbva484-1-e"
 
 <img src="https://i.ibb.co/fkNHkkT/5.png">
 
@@ -529,19 +527,19 @@ https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.htm
         out_data->user = in_data->user;
         }
 
-- The code is commented on what parts you should write and what not, this in order to create a code based on the data transfer by DMA, which is the fastest hardware way to move data and also be able to implement any structure in C that is required, which is very useful.
+- The code is commented on what parts you should write and what not, this in order to create a code based on the data transfer by DMA, which is the fastest way in hardware to move data, and also to be able to implement any structure in C that is required, which is very useful.
 
-- Once the writing of the code is finished, we will go to the top of the window to the synthesis button to compile the code.
+- Once the process of code writing is finished, we will go to the top of the window to the synthesis button to compile the code.
 
 <img src="https://i.ibb.co/rZncmdM/8.png">
 
-- If everything went well the code will be compiled and it will allow us to create our RTL, which is the file that we will import to Vivado Design Suite - HLx Editions to put it in our design to blocks of the FPGA.
+- If everything went well the code will be compiled and it will allow us to create our RTL, which is the file that we will import to Vivado Design Suite - HLx Editions to put it in our design, as blocks of the FPGA.
 
 <img src="https://i.ibb.co/B6BF4pS/9.png">
 
-8.2. Development of overlay with blocks in Vivado Design Suite - HLx Editions.
+8.2. Development of overlay with blocks in Vivado Design Suite - HLx Editions:
 
-- First when opening the program we will have to create a new project.
+- First open the program and then create a new project.
 
 <img src="https://i.ibb.co/f8gWx42/10.png">
 
@@ -549,11 +547,11 @@ https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.htm
 
 <img src="https://i.ibb.co/XDXbTsn/11.png">
 
-- In this option we put "do not specify sources at this time"
+- In this option we input "do not specify sources at this time"
 
 <img src="https://i.ibb.co/hf1PVQr/12.png">
 
-- We selected the Ultra96 in the selection of boards.
+- We select the Ultra96 in the selection of boards.
 
 <img src="https://i.ibb.co/TRWm0P1/13.png">
 
@@ -613,7 +611,7 @@ https://console.bluemix.net/docs/services/Cloudant/tutorials/create_database.htm
 
 <img src="https://i.ibb.co/rfppp5H/31.png">
 
-- Once we have finished our designs, we press the next button to automatically connect everything, this process we will do as many times as this button appears so that the connections are finished.
+- Once we have finished our designs, we press the next button to automatically connect everything, we will do this process as many times as this button appears so that the connections are finished.
 
 <img src="https://i.ibb.co/k6Z8hk8/32.png">
 
@@ -635,7 +633,7 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
 - The file was created in the path where the project ~ / vivado / ANY_NAME / ANY_NAME.runs / impl_1 / design_1_wrapper.bit was saved
 
-- That file you copy and paste it into the folder where you saved the tcl and you will also give them both the same name.
+- You have to copy that file and paste it into the folder where you saved the tcl, and give them both the same name.
 
 - Once this is done we will paste both files in the Overlays folder of the Ultra96 as we did in subsection 1.8.
 
@@ -672,7 +670,7 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
         # After this, the data was in your out_buffer
 
-9.4. Here we show some results where we show that using FPGA designs is an advantage.
+9.4. Here we show some results, we can see that using the FPGA is an overwhelming advantage over just the processor.
 
 <img src="https://i.ibb.co/HtLYmg0/estadistica.png">
 
@@ -682,7 +680,7 @@ DOKI
 
 ## References:
 
-All the information about the technology used and direct references are in our wiki:
+All the information about the technology used, and direct references are in our wiki:
 
 Wiki: https://github.com/EddOliver/BBM-Bridge-Baby-Monitor/wiki
 
