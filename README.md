@@ -11,9 +11,9 @@ Intelligent IoT Edge solution for structural monitoring, based on the analysis o
 * [Problematic](#problematic)
 * [Our Solution](#our-solution)
 * [Ultra96 Setup](#ultra96-setup)
-* [Accelerometer configuration in the Arduino Curie](#accelerometer-configuration-in-the-arduino-curie)
-* [Configure the Raspberry Pi Zero](#configure-the-raspberry-pi-zero)
-* [Connection diagrams of all the devices](#connection-diagrams-of-all-the-devices)
+* [Accelerometer configuration for Arduino Curie](#accelerometer-configuration-in-the-arduino-curie)
+* [Configuration of the Raspberry Pi Zero](#configure-the-raspberry-pi-zero)
+* [Connection diagrams for all the devices](#connection-diagrams-of-all-the-devices)
 * [Time to perform the first test](#time-to-perform-the-first-test)
 * [Create your Dashboard](#create-your-dashboard)
 * [Tests](#tests)
@@ -24,18 +24,22 @@ Intelligent IoT Edge solution for structural monitoring, based on the analysis o
 
 ## Introduction:
 
-DOKI INTRODUCTION
+According to the 2017 Infrastructure Report Card published by the American Society of Civil Engineers (ASCE), almost 40 percent of the 614,387 bridges in the United States are at least a half century old. Almost 10 percent were structurally deficient in 2016. On average, 188 million vehicles cross structurally deficient bridges each day. People who manage them are constantly looking for more cost-effective ways to keep them in good repair.
 
+Perhaps the biggest issue affecting people who maintain bridges today is that they are forced into being reactive in how they approach their work, rather than proactive. They must repair the worst damage to structures rather than use limited resources to keep them in good shape. As with most things, being reactive is never as effective as planning ahead.
 
+A “worst first” approach is not a cost-effective way to keep bridges healthy. It evolves into a vicious cycle where more and more budget dollars go toward emergency repairs. This underfunds proactive maintenance projects that could keep bridges out of the deficient category entirely.
 
+According to ASCE, the current cost to rehabilitate the nation’s bridges is more than $120 billion.
+As with most things earthquakes and other disasters also can suddenly pass and if there's not a precise monitoring, issues could be fatal.
 
-
-
-Do not believe me yet?, look what happened to the pedestrian bridges in my university.
+This is quite important for our team as he had to live this predicament in 2017. On September the 7th of 2017 there was an earthquake in Mexico City. At about 8.1 in the Richter scale it caused structural damage to several buildings around the city and a couple pedestrian bridges in the authors' University. And then we had a big earthquake in September 19th that decimated these damaged structures, and in the case of our University this was the result. 
 
 Video: Click on the image
 
 [![TERREMOTO 7.1 | 19 DE SEPTIEMBRE 2017 | CDMX TEC DE MONTERREY](https://image.flaticon.com/icons/png/128/44/44431.png)](https://www.youtube.com/watch?v=47jqaRRaQAM)
+
+With better monitoring and alert systems we could have probably spotted on these failures and prevented the crisis, or maybe acted on it faster.
 
 ## Problematic:
 
