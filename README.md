@@ -676,7 +676,14 @@ Once the process is finished, we will press the "Generate Bitstream" button.
 
 ## Future Rollout
 
-DOKI
+To continue working on this and in order to improve it we wish to expand the possibilities of the project.
+
+-We want to integrate a camera to count people or objects passing through the bridge, and apply that information to the model.
+-Implement just an IMU to the sensor module instead of the combo we have.
+-Create a more complex IoT dashboard and platform (as this contest was for Edge computing we did not delve deep into cloud)
+-Populate it with many more sensors.
+
+This was a very fun project, thanks for reading!
 
 ## References:
 
