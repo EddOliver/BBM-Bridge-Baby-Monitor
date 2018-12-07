@@ -45,7 +45,7 @@ With better monitoring and alert systems we could have probably spotted on these
 
 <img src="https://bridgemastersinc.com/wp-content/uploads/2016/06/I-35W-Mississippi-River-Bridge-collapse.jpg" width="800">
 
-The main problematic is the little monitoring that bridges have, and the structural damage that they can have over time and as the lack of preventive maintenance can cause a partial or total failure.
+The main problematic is the little monitoring that bridges have, and the structural damage that they can have over time. As well as the lack of preventive maintenance, as it can prevent a partial or total failure.
 
 The main issues that cause a bridge to fail and fall are:
 
@@ -63,7 +63,7 @@ Other forms of predictive solutions in bridges do not provide accurate data, or 
 
 ## Our Solution:
 
-Our solution is to place a pair of vibration sensors (accelerometers or IMU's) strategically in bridges to perform continuous monitoring. And through AI and Machine Learning we will generate predictive models for the wear and tear of the bridge, and recommendations to the user to schedule preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
+Our solution is to place a pair of vibration sensors (accelerometers or IMU's) strategically in bridges to perform continuous monitoring. And through AI and Machine Learning at the edge we will generate predictive models for the wear and tear of the bridge, and recommendations to the user to schedule preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
 
 Bill of materials.
 
