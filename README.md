@@ -194,17 +194,17 @@ When this process has finished, execute the command in part 3 to obtain the IP o
 
 - To download the operating system of the Raspberry enter the following link:
 - Link: https://downloads.raspberrypi.org/raspbian_lite_latest
-- The version that we will download will be the lite version.
+- We will download the lite version.
 
-3.2. Flash in the SD operating system as shown in point 1.2 but with raspbian.
+3.2. Flash the operating system in the SD as shown in point 1.2 but with raspbian.
 
-- Flash with Etcher the raspberry operating system but DO NOT put it on the raspberry yet.
+- Through Etcher flash the raspberry operating system but DO NOT put it inside the raspberry yet.
 
 3.3. Create a wpa_supplicant for the connection of the raspberry to the internet.
 
-- Since we have the operating system flashed, we copy and paste the files from the "RaspberryPi" folder directly into the SD card.
-- Once we open the "wpa_supplicant.conf" file with a text editor
-- In between the quotes of ssid write your wifi network and the psk the network key.
+- Since we have flashed the operating system, we copy and paste the files from the "RaspberryPi" folder directly into the SD card.
+- Then we open the "wpa_supplicant.conf" file with a text editor
+- In between the quotes in the ssid line write your wifi network and in psk the network key.
 
         country = us
         update_config = 1
@@ -220,16 +220,16 @@ When this process has finished, execute the command in part 3 to obtain the IP o
 
 - We save the changes and remove the SD from the PC.
 
-3.4. We place the SD in the raspberry and connect it to its power source.
+3.4. We then place the SD in the raspberry and connect it to its power source.
 
-- The power source of a Raspberry Pi Zero is recommended to be from 5 volts to 1A minimum.
+- The power source of a Raspberry Pi Zero is recommended to be from 5 volts to 1A minimum. We recommend the official ower supply for the Raspberry pi.
 
-3.5. Once the raspberry has already started, we need to access it through SSH or with a keyboard and a monitor.
+3.5. Once the Raspberry has already started, we need to access it through SSH or with a keyboard and a monitor.
 
 - If you want to access it through SSH we need your IP.
 - In order to analyze your network and obtain the number we will have to use one of the following programs.
 - Advanced IP Scanner (Windows) or Angry IP Scanner program (Windows, Mac and Linux).
-- We can see in the screenshot below how we got the Raspberry IP.
+- In the following image you can see how we got the Raspberry IP.
 
 <img src="https://i.ibb.co/KLThvst/AngryIP.png"> 
 
@@ -237,7 +237,7 @@ When this process has finished, execute the command in part 3 to obtain the IP o
 
 - To pass the file via wifi to the raspberry we have to download another program called "FileZilla".
 - Link: https://filezilla-project.org/download.php?type=client
-- Once we have the program, we open it and put the data in the upper bar to access the raspberry.
+- Once we have the program, we open it and input the following data in the upper bar to access the raspberry.
 
 Host: RASPBERRYIP              Username:pi           Password:raspberry             port:22
 
@@ -246,7 +246,7 @@ Host: RASPBERRYIP              Username:pi           Password:raspberry         
 - Press Quickconnect.
 - Once we enter the Raspberry, we copy the file "exe.py" in the folder "/home/pi".
 
-3.7. Since we have the file in the raspberry we will have to connect the raspberry with ssh.
+3.7. Since we have the file in the raspberry, now we have to connect the raspberry with ssh.
 
 - To connect using ssh to the raspberry we need the Putty program.
 - Link: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
@@ -263,7 +263,7 @@ Host: RASPBERRYIP              Username:pi           Password:raspberry         
 
 3.8. First, we will install the necessary libraries for our program to work.
 
-- For it to work we just have to put the following command.
+- For it to work we just have to input the following command.
 
       sudo apt-get update && sudo apt-get install -y python-pip && pip install pyserial paho-mqtt
 
