@@ -37,7 +37,7 @@ This is quite important for our team as he had to live this predicament in 2017.
 
 Video: Click on the image
 
-[![TERREMOTO 7.1 | 19 DE SEPTIEMBRE 2017 | CDMX TEC DE MONTERREY](https://image.flaticon.com/icons/png/128/44/44431.png)](https://www.youtube.com/watch?v=47jqaRRaQAM)
+[![TERREMOTO 7.1 | 19 DE SEPTIEMBRE 2017 | CDMX TEC DE MONTERREY](https://image.flaticon.com/icons/png/128/44/44431.png)](https://www.youtube.com/watch?v=eVkoiONCB8s&feature=youtu.be)
 
 With better monitoring and alert systems we could have probably spotted on these failures and prevented the crisis, or maybe acted on it faster.
 
@@ -45,9 +45,9 @@ With better monitoring and alert systems we could have probably spotted on these
 
 <img src="https://bridgemastersinc.com/wp-content/uploads/2016/06/I-35W-Mississippi-River-Bridge-collapse.jpg" width="800">
 
-The main problematic is the little monitoring that bridges have, and the structural damage that they can have over time and as the lack of preventive maintenance can cause a partial or total failure of the bridge.
+The main problematic is the little monitoring that bridges have, and the structural damage that they can have over time and as the lack of preventive maintenance can cause a partial or total failure.
 
-The main problems by which a bridge can fail and fall are:
+The main issues that cause a bridge to fail and fall are:
 
 - Infrastructure failure.
 - Structrural collapse
@@ -57,20 +57,20 @@ The main problems by which a bridge can fail and fall are:
 - Unexpected events
 - A combination of issues.
 
-If we could notice a failure in the structure beforehand this would cut costs of maintenance and also prevent any disaster, therefore that is the main problem we want to fight with our solution.
+If we could notice damage in the structure beforehand this would cut costs of maintenance and also prevent any disaster, therefore that is the focus of our solution.
 
 Other forms of predictive solutions in bridges do not provide accurate data, or require a technician to go directly to the place to check manually.
 
 ## Our Solution:
 
-Our solution is to place a pair of vibration sensors strategically in bridges to perform a continuous monitoring. And through AI and Machine Learning we will generate predictive models for the wear and tear of the bridge, and to recommend the user scheduling for preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
+Our solution is to place a pair of vibration sensors (accelerometers or IMU's) strategically in bridges to perform continuous monitoring. And through AI and Machine Learning we will generate predictive models for the wear and tear of the bridge, and recommendations to the user to schedule preventive maintenance. We will use these algorithms and then accelerate them via the potent FPGA on top of the Ultra96 for maximum performance.
 
 Bill of materials.
 
 - Ultra96 Board .
 - SD card, 16 GB, Class 10 (Ultra96).
 - Power Source, 5v 2.5 A, Jack, (Ultra96)
-- Arduino 101 (Arduino Curie).
+- Arduino 101 (Arduino Curie for its IMU).
 - Raspberry Pi Zero W.
 - SD card, 16 GB, Class 10 (Raspberry Pi Zero W).
 - Power Source, 5v 2.5 A, micro-USB (Raspberry Pi Zero W).
@@ -86,7 +86,7 @@ Optional (Our own testing platform):
 - 2x small Servo motors.
 - Power Bank 5v (Another).
 
-Code Flowchart.
+Flowchart.
 
 <img src="https://i.ibb.co/b78TxQr/Blank-Diagram-1.png">
 
@@ -94,10 +94,10 @@ Several Universities are already performing this type of census in structures us
 
 ## Ultra96 Setup:
 
-1. The most important part, for this solution, will be the use of the Ultra96 which is Xilinx and 96 boards' latest board. In this project we will take maximum advantage of the board in addition to its linux operating system, to perform software acceleration by creating hardware modules on the Ultra96's FPGA.
+1. The most important part, for this solution, will be the use of the Ultra96 which is Xilinx and 96 boards' latest board. In this project we will take maximum advantage of the board in addition to its linux operating system, to perform hardware acceleration by creating hardware modules on the Ultra96's FPGA.
 
 1.1. Download the operating system for the Ultra96:
-The operating system that comes by default in the SD card of the Ultra96, is a system based on PetaLinux. It caused many problems for us due to its inability to install packages using the "apt-get" command. The command was essential for the correct installation of some packages that we would be using later, therefore we settled to use another operating system that Xilinx offers from its official sources: Pynq. And here it is:
+The operating system that comes by default in the SD card of the Ultra96 is PetaLinux. It caused many problems for us due to its inability to install packages using the "apt-get" command. The command was essential for the correct installation of some packages that we would be using later, therefore we settled in using another operating system that Xilinx offers from its official sources: Pynq. And here it is:
 
 - Link: http://avnet.me/ultra96_pynq_sd_image
 - Link: Documents in the Wiki: D.
@@ -107,15 +107,15 @@ To Flash the operating system in the SD card, we recommend a minimum size of SD 
 We recommend the following software which works in any operating system, but you can use your preferred one:
 
 - Link: https://www.balena.io/etcher/
-- Remember that before Flashing the operating system you have to format the SD.
+- Remember that before Flashing the operating system, you have to format the SD.
 
-1.3. Once the operating system is flashed, place the SD card in the correct slot of the Ultra96, connect a microUSB cable to the laptop, also the power cable, and press the power button as shown in the following diagram.
+1.3. Once the operating system is flashed, place the SD card in the correct slot of the Ultra96, connect a microUSB cable to a laptop, the power cable, and press the power button as shown in the following diagram.
 
-- Remember that the minimum power the card can have is 12 Volts at 2 A.
+- Remember that the minimum power the card needs to operate is 12 Volts at 2 A. We used the Qualcomm's Dragonboard Power source.
 
 <img src="https://i.ibb.co/QXBvKQV/Ultra-Conections.png">
 
-1.4. If the Flashing of the operating system and the power supply is correct, the board will turn on as follows.
+1.4. If Flashing the operating system and the power supply have worked, the board will turn on as follows.
 
 
 Video: Click on the image
@@ -124,7 +124,7 @@ Video: Click on the image
 
 1.5. Once we have connected the card, we will notice that the connected memory will appear on our connected USB devices.
 
-- The Ultra96 creates an Ethernet PCI connection and when we see that USB memory connected it means that we are ready to start working.
+- The Ultra96 creates an Ethernet PCI connection, when we see that USB memory connected it means that we are ready to start working.
 
 <img src="https://i.ibb.co/k42JcTZ/USB.png">
 
