@@ -269,40 +269,40 @@ Host: RASPBERRYIP              Username:pi           Password:raspberry         
 
 - This command will install the pyserial and paho-mqtt libraries
 
-3.9. Once the console is open, we will edit the file that we passed in the previous paragraph to configure the IP of the Ultra96.
+3.9. Once the console is open, we will edit the file used in the previous paragraph to configure the IP of the Ultra96.
 
-- In the terminal of the raspberry we will write the following command.
+- In the Raspberry's terminal we will write the following command.
      
     sudo nano exe.py
 
 <img src="https://i.ibb.co/JCpSFDJ/terminalcomand.png">
 
 - The command will open the text editor where we can go through the file "exe.py".
-- We go down to the part shown in the image and instead of the text "ULTRA96IP" we will put the IP that we obtained in subsection 1.9.
+- We go down to the part shown in the image and instead of the text "ULTRA96IP" we will input the IP that we obtained in subsection 1.9.
 
 <img src="https://i.ibb.co/gwmdqyZ/Putty.png">
 
-- Since we change that text we will save the changes made by pressing "ctrl + o" and enter, and to exit the editor press "ctrl + c".
+- Since we changed that text, we will save the changes made by pressing "ctrl + o" and enter, and to exit the editor pressing "ctrl + c".
 
-3.10. Put the program that runs whenever you turn on the raspberry.
-In order for the program to start together with raspbian and we no longer have to execute it, we will write the following command.
+3.10. Input boot program for the Raspberry Zero.
+In order for the program to start together with raspbian, and for us to no longer need to execute it, we will write the following command.
 
     sudo nano /etc/rc.local
 
 <img src="https://i.ibb.co/t46LWqc/start.png">
 
-- Inside the file we will have to write the following as shown in the image.
+- Inside the file we will have to write the following:
 
       sudo python /home/pi/exe.py
       
 <img src="https://i.ibb.co/177pdcd/start2.png">
 
-- As we add that text we will save the changes made by pressing "ctrl + o" and enter, and to exit the editor press "ctrl + c".
+- After adding that text, we will save the changes made by pressing "ctrl + o" and enter, to exit the editor press "ctrl + c".
 
-3.11. Once we finish editing this file we are ready to connect everything and run our program in the Ultra96.
+3.11. Once we have finished editing this file, we are ready to connect everything and run our program in the Ultra96.
 Before proceeding, disconnect the raspberry and the arduino from their sources because we are going to connect them to each other.
 
-## Connection diagrams of all the devices:
+## Connection diagrams for all the devices:
 
 4.1. Schematic:
 
@@ -310,7 +310,7 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 4.2. Real connections:
 
-- The black box below the raspberry is a power bank of 5v - 10000mA.
+- The black box below the raspberry is a 5v - 10000mA power bank.
 
 <img src="https://i.ibb.co/y0FNfCq/Fisicoa.jpg">
 
@@ -318,35 +318,34 @@ Before proceeding, disconnect the raspberry and the arduino from their sources b
 
 5.1. Connect the Ultra96 to the network and activate Mosquitto.
 
-- For this first test we will connect the Ultra96 first as shown in the diagram of point 4. and we will turn it on.
-- We will access the web interface where the Jupyter Notebooks are.
-- We will enter the Hackster folder.
-- We opened the "Bridges.ipynb" and "Wifi_Mosquitto.ipynb" notebook.
-- We entered the "Wifi_Mosquitto.ipynb" notebook.
-- We put our data of SSID and PSW.
-- We give run to run the program to connect to our WiFi network and activate the Mosquitto broker.
+- For this first test we will connect the Ultra96 first as shown in the point 4's diagram. and we will turn it on.
+- Access the web interface where the Jupyter Notebooks are.
+- Enter the Hackster folder.
+- Open the "Bridges.ipynb" and "Wifi_Mosquitto.ipynb" notebook.
+- Enter the "Wifi_Mosquitto.ipynb" notebook.
+- Input SSID and PSW data.
+- Press run to start the program to connect to your WiFi network and activate the Mosquitto broker.
 
 5.2. Connection to the Ultra96 broker.
 
-- Once it connects correctly, we enter the "Bridges.ipynb" notebook.
-- We execute the main code, if everything goes well we will notice as it says "Connected to broker" meaning that there is a correct connection.
+- Once everything connects correctly, we then enter the "Bridges.ipynb" notebook.
+- Execute the main code, if everything goes well we will notice as it says "Connected to the broker" meaning that there is a correct connection.
 
 5.3. Connect the sensor module.
 
-- Connect your power supply to the raspberry and go!
+- Connect your power supply to the raspberry and leave it.
+
 5.4. Check that the data reaches the board.
 
-- If the data is arriving correctly, according to the sampling specifications that we have programmed, we will receive these notifications that the frequencies are being saved in a CSV file.
+- If the data is arriving correctly, according to the sampling specifications that we have programmed, we will receive notifications that the frequencies are being saved in a CSV file.
 
 <img src="https://i.ibb.co/cyTPBrJ/Results.png">
 
-5.5. Once all the data samples have been made, the system will take the stored data and load them into the machine learning model so that it learns in each iteration and becomes more precise, this being a model of continuous learning.
+5.5. Once all the data samples have been made, the system will take the stored data and load them into the machine learning model so that it learns each iteration and becomes a more precise continuous learning model.
 
 <img src="https://i.ibb.co/Q9nnM3N/results1.png">
 
 ## Create your Dashboard:
-
-//////////////////////TRADUCIR////////////////
 
 6. Para finalizar debemos realizar un dashboard con Watson IoT Cloud para visualizar los datos en tiempo real.
 
